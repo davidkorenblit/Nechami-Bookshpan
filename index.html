@@ -410,20 +410,20 @@
       <!-- 3D Flip Grid: FRONT = BLUEPRINT, BACK = REALITY -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
 
-        <!-- CARD 1: a1 (שרטוט בחזית) -> a2 (ביצוע מאחור) -->
+        <!-- CARD 1: a2 (שרטוט בחזית) -> a1 (ביצוע מאחור) -->
         <div class="flip-card-container group perspective-1200 h-[500px] sm:h-[530px] cursor-pointer" data-card-id="1">
           <div class="flip-card-inner relative w-full h-full transform-style-3d shadow-md hover:shadow-2xl transition-all duration-700 border border-borderStone">
             
-            <!-- FRONT: השרטוט האדריכלי (a1.jpeg) -->
+            <!-- FRONT: השרטוט האדריכלי (a2.jpeg) -->
             <div class="absolute inset-0 w-full h-full backface-hidden bg-[#1E252B] flex flex-col justify-between overflow-hidden">
               <div class="relative w-full h-full flex items-center justify-center p-3 bg-[#11161B]">
                 <img 
-                  src="a1.jpeg" 
+                  src="a2.jpeg" 
                   alt="תוכנית עבודה אדריכלית" 
                   class="w-full h-full object-contain filter contrast-125"
                   loading="lazy"
                   decoding="async"
-                  onerror="this.onerror=null; this.src='a1.jpg';"
+                  onerror="this.onerror=null; this.src='a2.jpg';"
                 />
                 
                 <!-- Pill Tag: תוכנית עבודה -->
@@ -434,7 +434,7 @@
 
                 <!-- Lightbox Zoom -->
                 <button 
-                  onclick="event.stopPropagation(); openLightbox('a1.jpeg', 'שרטוט אדריכלי מפורט', 'שרטוט מדויק ב-AutoCAD, תוכנית העמדה ומידות ביצוע')"
+                  onclick="event.stopPropagation(); openLightbox('a2.jpeg', 'שרטוט אדריכלי מפורט', 'שרטוט מדויק ב-AutoCAD, תוכנית העמדה ומידות ביצוע')"
                   class="absolute top-4 left-4 p-2 bg-graphite/80 hover:bg-bronze text-white rounded-none border border-white/20 transition-colors shadow-sm"
                   title="בחינת שרטוט בהגדלה"
                   aria-label="בחינת שרטוט בהגדלה"
@@ -458,16 +458,16 @@
               </div>
             </div>
 
-            <!-- BACK: הביצוע בשטח (a2.jpeg) -->
+            <!-- BACK: הביצוע בשטח (a1.jpeg) -->
             <div class="absolute inset-0 w-full h-full backface-hidden rotate-y-180 bg-stoneSurface flex flex-col justify-between overflow-hidden">
               <div class="relative w-full h-full overflow-hidden bg-stone-900">
                 <img 
-                  src="a2.jpeg" 
+                  src="a1.jpeg" 
                   alt="הביצוע בשטח" 
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                   decoding="async"
-                  onerror="this.onerror=null; this.src='a2.jpg';"
+                  onerror="this.onerror=null; this.src='a1.jpg';"
                 />
                 
                 <!-- Pill Tag: הביצוע בשטח -->
@@ -478,7 +478,7 @@
 
                 <!-- Lightbox Zoom -->
                 <button 
-                  onclick="event.stopPropagation(); openLightbox('a2.jpeg', 'הביצוע בשטח', 'המרחב הבנוי המוגמר על פי תוכנית השרטוט')"
+                  onclick="event.stopPropagation(); openLightbox('a1.jpeg', 'הביצוע בשטח', 'המרחב הבנוי המוגמר על פי תוכנית השרטוט')"
                   class="absolute top-4 left-4 p-2 bg-graphite/80 hover:bg-bronze text-white rounded-none border border-white/20 transition-colors shadow-sm"
                   title="צפייה בתמונה מלאה"
                   aria-label="צפייה בתמונה מלאה"
@@ -505,20 +505,20 @@
           </div>
         </div>
 
-        <!-- CARD 2: b1 (שרטוט בחזית) -> b2 (ביצוע מאחור) -->
+        <!-- CARD 2: b2 (שרטוט בחזית) -> b1 (ביצוע מאחור) -->
         <div class="flip-card-container group perspective-1200 h-[500px] sm:h-[530px] cursor-pointer" data-card-id="2">
           <div class="flip-card-inner relative w-full h-full transform-style-3d shadow-md hover:shadow-2xl transition-all duration-700 border border-borderStone">
             
-            <!-- FRONT: השרטוט האדריכלי (b1.jpeg) -->
+            <!-- FRONT: השרטוט האדריכלי (b2.jpeg) -->
             <div class="absolute inset-0 w-full h-full backface-hidden bg-[#1E252B] flex flex-col justify-between overflow-hidden">
               <div class="relative w-full h-full flex items-center justify-center p-3 bg-[#11161B]">
                 <img 
-                  src="b1.jpeg" 
+                  src="b2.jpeg" 
                   alt="תוכנית פריסות וחללים רטובים" 
                   class="w-full h-full object-contain filter contrast-125"
                   loading="lazy"
                   decoding="async"
-                  onerror="this.onerror=null; this.src='b1.jpg';"
+                  onerror="this.onerror=null; this.src='b2.jpg';"
                 />
                 
                 <div class="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 bg-graphite/90 text-white text-[11px] font-mono tracking-wider backdrop-blur-sm border border-white/20">
@@ -527,7 +527,7 @@
                 </div>
 
                 <button 
-                  onclick="event.stopPropagation(); openLightbox('b1.jpeg', 'פריסת חללים רטובים ואינסטלציה', 'תכנון פונקציונלי של חדר רחצה, גבהים ומיקומי כלים סניטריים')"
+                  onclick="event.stopPropagation(); openLightbox('b2.jpeg', 'פריסת חללים רטובים ואינסטלציה', 'תכנון פונקציונלי של חדר רחצה, גבהים ומיקומי כלים סניטריים')"
                   class="absolute top-4 left-4 p-2 bg-graphite/80 hover:bg-bronze text-white rounded-none border border-white/20 transition-colors shadow-sm"
                   title="בחינת שרטוט בהגדלה"
                   aria-label="בחינת שרטוט בהגדלה"
@@ -550,16 +550,16 @@
               </div>
             </div>
 
-            <!-- BACK: הביצוע בשטח (b2.jpeg) -->
+            <!-- BACK: הביצוע בשטח (b1.jpeg) -->
             <div class="absolute inset-0 w-full h-full backface-hidden rotate-y-180 bg-stoneSurface flex flex-col justify-between overflow-hidden">
               <div class="relative w-full h-full overflow-hidden bg-stone-900">
                 <img 
-                  src="b2.jpeg" 
+                  src="b1.jpeg" 
                   alt="הביצוע בשטח - סוויטה" 
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                   decoding="async"
-                  onerror="this.onerror=null; this.src='b2.jpg';"
+                  onerror="this.onerror=null; this.src='b1.jpg';"
                 />
                 
                 <div class="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 bg-bronze text-white text-[11px] font-medium tracking-wider backdrop-blur-sm shadow-sm">
@@ -568,7 +568,7 @@
                 </div>
 
                 <button 
-                  onclick="event.stopPropagation(); openLightbox('b2.jpeg', 'הביצוע בשטח - חדר רחצה וסוויטה', 'התאמה מלאה לתוכניות העבודה, גמר נקי וחיפויים')"
+                  onclick="event.stopPropagation(); openLightbox('b1.jpeg', 'הביצוע בשטח - חדר רחצה וסוויטה', 'התאמה מלאה לתוכניות העבודה, גמר נקי וחיפויים')"
                   class="absolute top-4 left-4 p-2 bg-graphite/80 hover:bg-bronze text-white rounded-none border border-white/20 transition-colors shadow-sm"
                   title="צפייה בתמונה מלאה"
                   aria-label="צפייה בתמונה מלאה"
@@ -594,20 +594,20 @@
           </div>
         </div>
 
-        <!-- CARD 3: c1 (שרטוט בחזית) -> c2 (ביצוע מאחור) -->
+        <!-- CARD 3: c2 (שרטוט בחזית) -> c1 (ביצוע מאחור) -->
         <div class="flip-card-container group perspective-1200 h-[500px] sm:h-[530px] cursor-pointer" data-card-id="3">
           <div class="flip-card-inner relative w-full h-full transform-style-3d shadow-md hover:shadow-2xl transition-all duration-700 border border-borderStone">
             
-            <!-- FRONT: השרטוט האדריכלי (c1.jpeg) -->
+            <!-- FRONT: השרטוט האדריכלי (c2.jpeg) -->
             <div class="absolute inset-0 w-full h-full backface-hidden bg-[#1E252B] flex flex-col justify-between overflow-hidden">
               <div class="relative w-full h-full flex items-center justify-center p-3 bg-[#11161B]">
                 <img 
-                  src="c1.jpeg" 
-                  alt="תוכנית נגרות ומטבח" 
+                  src="c2.jpeg" 
+                  alt="תוכנית נגרות ורחצה" 
                   class="w-full h-full object-contain filter contrast-125"
                   loading="lazy"
                   decoding="async"
-                  onerror="this.onerror=null; this.src='c1.jpg';"
+                  onerror="this.onerror=null; this.src='c2.jpg';"
                 />
                 
                 <div class="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 bg-graphite/90 text-white text-[11px] font-mono tracking-wider backdrop-blur-sm border border-white/20">
@@ -616,7 +616,7 @@
                 </div>
 
                 <button 
-                  onclick="event.stopPropagation(); openLightbox('c1.jpeg', 'שרטוט נגרות ומטבח', 'תכנון מערך אי, אחסון וחלוקה פנימית מדויקת')"
+                  onclick="event.stopPropagation(); openLightbox('c2.jpeg', 'שרטוט נגרות וחיפויים', 'תכנון ארון רחצה, פריסה ומידות מדויקות')"
                   class="absolute top-4 left-4 p-2 bg-graphite/80 hover:bg-bronze text-white rounded-none border border-white/20 transition-colors shadow-sm"
                   title="בחינת שרטוט בהגדלה"
                   aria-label="בחינת שרטוט בהגדלה"
@@ -635,20 +635,20 @@
 
               <div class="p-4 bg-canvas border-t border-borderStone">
                 <span class="text-[11px] font-mono text-bronze block mb-1">DRAFTING // 03</span>
-                <h4 class="font-display font-medium text-base text-graphite">מערך מטבח, אי עבודה ואחסון סמוי</h4>
+                <h4 class="font-display font-medium text-base text-graphite">מערך חדר רחצה, אינטגרליות וחיפוי</h4>
               </div>
             </div>
 
-            <!-- BACK: הביצוע בשטח (c2.jpeg) -->
+            <!-- BACK: הביצוע בשטח (c1.jpeg) -->
             <div class="absolute inset-0 w-full h-full backface-hidden rotate-y-180 bg-stoneSurface flex flex-col justify-between overflow-hidden">
               <div class="relative w-full h-full overflow-hidden bg-stone-900">
                 <img 
-                  src="c2.jpeg" 
-                  alt="הביצוע בשטח - מטבח" 
+                  src="c1.jpeg" 
+                  alt="הביצוע בשטח - חדר רחצה" 
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                   decoding="async"
-                  onerror="this.onerror=null; this.src='c2.jpg';"
+                  onerror="this.onerror=null; this.src='c1.jpg';"
                 />
                 
                 <div class="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 bg-bronze text-white text-[11px] font-medium tracking-wider backdrop-blur-sm shadow-sm">
@@ -657,7 +657,7 @@
                 </div>
 
                 <button 
-                  onclick="event.stopPropagation(); openLightbox('c2.jpeg', 'הביצוע בשטח - מטבח ואירוח', 'הגשמת תוכנית הנגרות בפועל')"
+                  onclick="event.stopPropagation(); openLightbox('c1.jpeg', 'הביצוע בשטח - חדר רחצה מעוצב', 'הגשמת תוכנית הנגרות והחיפוי בפועל')"
                   class="absolute top-4 left-4 p-2 bg-graphite/80 hover:bg-bronze text-white rounded-none border border-white/20 transition-colors shadow-sm"
                   title="צפייה בתמונה מלאה"
                   aria-label="צפייה בתמונה מלאה"
