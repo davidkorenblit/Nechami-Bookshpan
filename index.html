@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>נחמי בוקשפן | אדריכלות ועיצוב פנים</title>
+  <meta name="description" content="נחמי בוקשפן – סטודיו לתכנון אדריכלי, שינויי דיירים מקיפים ועיצוב פנים בהתאמה אישית. דיוק, חומר ושקט.">
+  
+  <!-- Favicon / Brand SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231A1A1A'/><text x='50' y='64' font-size='46' font-family='sans-serif' font-weight='300' fill='%23FAF9F6' text-anchor='middle'>NB</text></svg>">
+
+  <!-- Google Fonts: Heebo (display) & Assistant (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            canvas: '#FAF9F6',
+            stoneSurface: '#F3F1EC',
+            graphite: '#1A1A1A',
+            slateMuted: '#6E6D6A',
+            bronze: '#A38A67',
+            bronzeLight: '#B59E7D',
+            borderStone: '#E5E2DC',
+          },
+          fontFamily: {
+            display: ['Heebo', 'sans-serif'],
+            body: ['Assistant', 'sans-serif'],
+          },
+          letterSpacing: {
+            tighter: '-0.03em',
+            tight: '-0.015em',
+            wide: '0.04em',
+            wider: '0.08em',
+            widest: '0.14em',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Base & Typography Styles */
+    body {
+      background-color: #FAF9F6;
+      color: #1A1A1A;
+      font-family: 'Assistant', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .font-display {
+      font-family: 'Heebo', sans-serif;
+    }
+
+    /* Custom Subtle Architectural Scrollbar */
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FAF9F6;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D8D4CC;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #A38A67;
+    }
+
+    /* 3D Flip Card Engine */
+    .perspective-1200 {
+      perspective: 1200px;
+      -webkit-perspective: 1200px;
+    }
+    .transform-style-3d {
+      transform-style: preserve-3d;
+      -webkit-transform-style: preserve-3d;
+      transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .backface-hidden {
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+    .rotate-y-180 {
+      transform: rotateY(180deg);
+      -webkit-transform: rotateY(180deg);
+    }
+    
+    /* Desktop Hover Flip + Touch .is-flipped class */
+    @media (hover: hover) and (pointer: fine) {
+      .group:hover .flip-card-inner:not(.manual-lock) {
+        transform: rotateY(180deg);
+      }
+    }
+    .flip-card-inner.is-flipped {
+      transform: rotateY(180deg) !important;
+    }
+
+    /* Ambient Hero Ken Burns */
+    @keyframes subtleKenBurns {
+      0% { transform: scale(1.0); }
+      50% { transform: scale(1.06); }
+      100% { transform: scale(1.0); }
+    }
+    .hero-ken-burns {
+      animation: subtleKenBurns 24s ease-in-out infinite alternate;
+    }
+
+    /* Blueprint Grid Canvas Texture Overlay */
+    .blueprint-pattern {
+      background-size: 24px 24px;
+      background-image: 
+        linear-gradient(to right, rgba(163, 138, 103, 0.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(163, 138, 103, 0.06) 1px, transparent 1px);
+    }
+
+    /* Pulse Glow for WhatsApp */
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+      70% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+    .whatsapp-glow {
+      animation: pulseGlow 2.5s infinite;
+    }
+  </style>
+</head>
+
+<body class="selection:bg-bronze selection:text-white">
+
+  <!-- ========================================================= -->
+  <!-- 1. STICKY GLASSMORPHIC HEADER & NAVIGATION                -->
+  <!-- ========================================================= -->
+  <header id="site-header" class="fixed top-0 inset-x-0 z-40 transition-all duration-300 border-b border-borderStone/60 bg-[#FAF9F6]/85 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="group flex flex-col items-start focus:outline-none">
+        <span class="font-display font-medium text-xl sm:text-2xl tracking-wide text-graphite group-hover:text-bronze transition-colors duration-200">
+          נחמי בוקשפן
+        </span>
+        <span class="text-[11px] font-light text-slateMuted tracking-wider uppercase">
+          אדריכלות ועיצוב פנים
+        </span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-7 lg:gap-9 text-sm font-medium text-slateMuted">
+        <a href="#hero" class="nav-link transition-colors hover:text-graphite py-1 text-graphite relative" data-target="hero">
+          ראשי
+          <span class="indicator absolute bottom-0 right-0 left-0 h-[2px] bg-bronze transition-all duration-200"></span>
+        </a>
+        <a href="#philosophy" class="nav-link transition-colors hover:text-graphite py-1 relative" data-target="philosophy">
+          פילוסופיה
+          <span class="indicator absolute bottom-0 right-0 left-0 h-[2px] bg-bronze scale-x-0 transition-all duration-200"></span>
+        </a>
+        <a href="#transformation" class="nav-link transition-colors hover:text-graphite py-1 relative" data-target="transformation">
+          מהתוכנית למציאות
+          <span class="indicator absolute bottom-0 right-0 left-0 h-[2px] bg-bronze scale-x-0 transition-all duration-200"></span>
+        </a>
+        <a href="#blueprints" class="nav-link transition-colors hover:text-graphite py-1 relative" data-target="blueprints">
+          פרויקטים ותוכניות
+          <span class="indicator absolute bottom-0 right-0 left-0 h-[2px] bg-bronze scale-x-0 transition-all duration-200"></span>
+        </a>
+        <a href="#about" class="nav-link transition-colors hover:text-graphite py-1 relative" data-target="about">
+          אודות
+          <span class="indicator absolute bottom-0 right-0 left-0 h-[2px] bg-bronze scale-x-0 transition-all duration-200"></span>
+        </a>
+        <a href="#contact" class="nav-link transition-colors hover:text-graphite py-1 relative" data-target="contact">
+          צור קשר
+          <span class="indicator absolute bottom-0 right-0 left-0 h-[2px] bg-bronze scale-x-0 transition-all duration-200"></span>
+        </a>
+      </nav>
+
+      <!-- Action Button & Mobile Toggle -->
+      <div class="flex items-center gap-4">
+        <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 text-xs font-semibold tracking-wide uppercase text-white bg-graphite hover:bg-bronze transition-all duration-300 rounded-none shadow-sm hover:shadow-md">
+          <span>תיאום פגישה</span>
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+        </a>
+
+        <!-- Mobile Menu Trigger -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-graphite hover:text-bronze focus:outline-none" aria-label="תפריט">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Nav -->
+    <div id="mobile-menu" class="hidden md:hidden border-b border-borderStone bg-canvas/98 backdrop-blur-xl px-6 py-6 transition-all duration-300">
+      <div class="flex flex-col space-y-4 text-base font-medium text-graphite">
+        <a href="#hero" class="mobile-nav-link py-2 border-b border-borderStone/40 flex items-center justify-between">
+          <span>ראשי</span>
+          <i data-lucide="chevron-left" class="w-4 h-4 text-bronze"></i>
+        </a>
+        <a href="#philosophy" class="mobile-nav-link py-2 border-b border-borderStone/40 flex items-center justify-between">
+          <span>פילוסופיה</span>
+          <i data-lucide="chevron-left" class="w-4 h-4 text-bronze"></i>
+        </a>
+        <a href="#transformation" class="mobile-nav-link py-2 border-b border-borderStone/40 flex items-center justify-between">
+          <span>מהתוכנית למציאות</span>
+          <i data-lucide="chevron-left" class="w-4 h-4 text-bronze"></i>
+        </a>
+        <a href="#blueprints" class="mobile-nav-link py-2 border-b border-borderStone/40 flex items-center justify-between">
+          <span>פרויקטים ותוכניות</span>
+          <i data-lucide="chevron-left" class="w-4 h-4 text-bronze"></i>
+        </a>
+        <a href="#about" class="mobile-nav-link py-2 border-b border-borderStone/40 flex items-center justify-between">
+          <span>אודות</span>
+          <i data-lucide="chevron-left" class="w-4 h-4 text-bronze"></i>
+        </a>
+        <a href="#contact" class="mobile-nav-link py-2 flex items-center justify-between">
+          <span>צור קשר</span>
+          <i data-lucide="chevron-left" class="w-4 h-4 text-bronze"></i>
+        </a>
+        <a href="#contact" class="mt-4 text-center py-3 bg-graphite text-white text-sm font-medium tracking-wide">
+          תיאום פגישת ייעוץ
+        </a>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ========================================================= -->
+  <!-- 2. HERO SECTION (EDITORIAL IMPACT)                        -->
+  <!-- ========================================================= -->
+  <section id="hero" class="relative min-h-[92vh] pt-24 pb-16 flex items-center justify-center overflow-hidden border-b border-borderStone">
+    
+    <!-- Editorial Split Background Image with Ken Burns -->
+    <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      <div class="relative w-full h-full">
+        <img 
+          src="1.jpeg" 
+          alt="נחמי בוקשפן - מרחב מגורים מתוכנן" 
+          class="hero-ken-burns w-full h-full object-cover object-center filter brightness-[0.92] contrast-[1.02]"
+          loading="eager"
+          decoding="async"
+          onerror="this.onerror=null; this.src='image_1.jpeg';"
+        />
+        <!-- Architectural Overlay Gradients -->
+        <div class="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/80 to-canvas/40 sm:via-canvas/60"></div>
+        <div class="absolute inset-0 bg-canvas/30 backdrop-blur-[1.5px]"></div>
+      </div>
+    </div>
+
+    <!-- Architectural Content Frame -->
+    <div class="relative z-10 max-w-5xl mx-auto px-5 sm:px-8 text-center pt-8 sm:pt-14">
+      
+      <!-- Sub-badge -->
+      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-borderStone bg-white/70 backdrop-blur-md mb-8 shadow-sm">
+        <span class="w-2 h-2 rounded-full bg-bronze animate-pulse"></span>
+        <span class="text-xs font-semibold tracking-wider text-slateMuted uppercase">
+          סטודיו לתכנון אדריכלי ושינויי דיירים
+        </span>
+      </div>
+
+      <!-- Main Editorial Headline -->
+      <h1 class="font-display font-medium text-3xl sm:text-5xl md:text-6xl lg:text-[4.2rem] text-graphite tracking-tight leading-[1.18] mb-6">
+        מרחבים שנולדו מתוך <br class="hidden sm:inline" />
+        <span class="font-normal italic text-bronze">דיוק</span>, 
+        <span class="font-normal">חומר</span> ו<span class="font-normal">שקט</span>.
+      </h1>
+
+      <!-- Refined Subtitle -->
+      <p class="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-slateMuted font-light leading-relaxed mb-10">
+        תכנון אדריכלי שלם, ניהול שינויי דיירים מדויק מול קבלנים, ועיצוב פנים טוטאלי המשלב בין קפדנות הנדסית לאסתטיקה חמה.
+      </p>
+
+      <!-- Dual CTAs -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5">
+        <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 bg-graphite hover:bg-bronze text-white text-sm font-semibold tracking-wide transition-all duration-300 shadow-md hover:shadow-xl">
+          <span>תיאום פגישת ייעוץ</span>
+          <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        </a>
+        
+        <a href="#blueprints" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 border border-borderStone bg-white/80 hover:bg-white text-graphite hover:text-bronze text-sm font-semibold tracking-wide backdrop-blur-sm transition-all duration-300 shadow-sm hover:shadow-md">
+          <i data-lucide="file-text" class="w-4 h-4 text-bronze"></i>
+          <span>צפייה בתוכניות ובתיק הפרויקטים</span>
+        </a>
+      </div>
+
+      <!-- Subtle Scroll Down Indicator -->
+      <div class="mt-14 sm:mt-20 flex justify-center">
+        <a href="#philosophy" class="group inline-flex flex-col items-center gap-2 text-xs font-light tracking-widest text-slateMuted hover:text-bronze transition-colors">
+          <span>גלילה לפילוסופיה</span>
+          <div class="w-5 h-9 rounded-full border border-borderStone flex items-start justify-center p-1">
+            <div class="w-1 h-2 rounded-full bg-bronze animate-bounce"></div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- 3. ARCHITECTURAL VISION & PHILOSOPHY (BREATHING ROOM)     -->
+  <!-- ========================================================= -->
+  <section id="philosophy" class="py-24 sm:py-32 bg-stoneSurface/50 border-b border-borderStone blueprint-pattern relative">
+    <div class="max-w-5xl mx-auto px-5 sm:px-8">
+      
+      <!-- Section Label -->
+      <div class="flex items-center justify-center gap-3 mb-8">
+        <span class="h-px w-10 bg-bronze"></span>
+        <span class="text-xs uppercase font-semibold tracking-widest text-bronze">הפילוסופיה האדריכלית</span>
+        <span class="h-px w-10 bg-bronze"></span>
+      </div>
+
+      <!-- Editorial Quote -->
+      <blockquote class="text-center mb-16 sm:mb-24">
+        <p class="font-display font-light text-2xl sm:text-3xl md:text-4xl text-graphite leading-snug max-w-4xl mx-auto">
+          "אדריכלות אמיתית אינה מתחילה בבחירת צבע או רהיט, אלא בהבנה עמוקה של האור, תנועת האדם במרחב, ויצירת סדר שלם שנשאר רלוונטי לאורך שנים."
+        </p>
+        <footer class="mt-6 text-sm font-medium tracking-wider text-slateMuted">
+          — נחמי בוקשפן
+        </footer>
+      </blockquote>
+
+      <!-- Minimalist Metrics / Value Pillars -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10">
+        
+        <!-- Pillar 1 -->
+        <div class="bg-canvas border border-borderStone p-8 sm:p-10 relative group hover:border-bronze transition-all duration-300">
+          <div class="w-12 h-12 mb-6 rounded-none bg-stoneSurface border border-borderStone flex items-center justify-center text-bronze group-hover:bg-bronze group-hover:text-white transition-colors">
+            <i data-lucide="compass" class="w-6 h-6"></i>
+          </div>
+          <span class="text-xs font-mono font-medium text-bronze tracking-wider block mb-2">01 / DRAFTING PRECISION</span>
+          <h3 class="font-display font-medium text-xl text-graphite mb-3">תכנון מדויק לפרטי פרטים</h3>
+          <p class="text-sm text-slateMuted font-light leading-relaxed">
+            תרגום כל חלום וצורך יומיומי לסט תוכניות עבודה הנדסיות קפדניות — חשמל, אינסטלציה, פריסות ריצוף ותוכניות הריסה ובנייה ללא פשרות.
+          </p>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="bg-canvas border border-borderStone p-8 sm:p-10 relative group hover:border-bronze transition-all duration-300">
+          <div class="w-12 h-12 mb-6 rounded-none bg-stoneSurface border border-borderStone flex items-center justify-center text-bronze group-hover:bg-bronze group-hover:text-white transition-colors">
+            <i data-lucide="layers" class="w-6 h-6"></i>
+          </div>
+          <span class="text-xs font-mono font-medium text-bronze tracking-wider block mb-2">02 / FULL EXECUTION</span>
+          <h3 class="font-display font-medium text-xl text-graphite mb-3">מהתוכנית ועד קבלת המפתח</h3>
+          <p class="text-sm text-slateMuted font-light leading-relaxed">
+            ליווי אישי מקיף מול קבלני ביצוע ואנשי מקצוע, פיקוח עליון בשטח והבטחה מוחלטת שכל קו בשרטוט מתממש בדיוק מרבי במציאות.
+          </p>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="bg-canvas border border-borderStone p-8 sm:p-10 relative group hover:border-bronze transition-all duration-300">
+          <div class="w-12 h-12 mb-6 rounded-none bg-stoneSurface border border-borderStone flex items-center justify-center text-bronze group-hover:bg-bronze group-hover:text-white transition-colors">
+            <i data-lucide="home" class="w-6 h-6"></i>
+          </div>
+          <span class="text-xs font-mono font-medium text-bronze tracking-wider block mb-2">03 / CONTRACTOR ALIGNMENT</span>
+          <h3 class="font-display font-medium text-xl text-graphite mb-3">שינויי דיירים מותאמים אישית</h3>
+          <p class="text-sm text-slateMuted font-light leading-relaxed">
+            מומחיות ייעודית בהסבת דירות קבלן סטנדרטיות ליצירות מופת מותאמות אישית, תוך עמידה בלוחות הזמנים של הקבלן וחיסכון כספי ניכר.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- 4. מהתוכנית למציאות (ADVANCED 3D FLIP CARDS) - CORE       -->
+  <!-- ========================================================= -->
+  <section id="transformation" class="py-24 sm:py-32 bg-canvas border-b border-borderStone">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      
+      <!-- Section Header -->
+      <div class="max-w-2xl mx-auto text-center mb-16 sm:mb-20">
+        <div class="inline-flex items-center gap-2 text-xs uppercase font-semibold tracking-widest text-bronze mb-3">
+          <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
+          <span>טרנספורמציה אדריכלית</span>
+        </div>
+        <h2 class="font-display font-medium text-3xl sm:text-4xl md:text-5xl text-graphite tracking-tight mb-4">
+          מהתוכנית למציאות
+        </h2>
+        <p class="text-sm sm:text-base text-slateMuted font-light">
+          היופי שבראיית התוצאה הסופית עוד כשהיא רק קווים על הנייר. 
+          <strong class="font-medium text-graphite">העבירו את העכבר</strong> או <strong class="font-medium text-graphite">לחצו על הכרטיס</strong> כדי להפוך בין תוכנית העבודה לביצוע בשטח.
+        </p>
+      </div>
+
+      <!-- 3D Flip Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+
+        <!-- CARD 1: a1 (Plan) -> a2 (Reality) -->
+        <div class="flip-card-container group perspective-1200 h-[500px] sm:h-[530px] cursor-pointer" data-card-id="1">
+          <div class="flip-card-inner relative w-full h-full transform-style-3d shadow-md hover:shadow-2xl transition-all duration-700 border border-borderStone">
+            
+            <!-- FRONT: AutoCAD Blueprint (a1.jpeg) -->
+            <div class="absolute inset-0 w-full h-full backface-hidden bg-[#1E252B] flex flex-col justify-between overflow-hidden">
+              <!-- Blueprint Image with Blueprint-like blueprint filter -->
+              <div class="relative w-full h-full flex items-center justify-center p-3 bg-[#11161B]">
+                <img 
+                  src="a1.jpeg" 
+                  alt="תוכנית עבודה אדריכלית - פרויקט A" 
+                  class="w-full h-full object-contain filter contrast-125"
+                  loading="lazy"
+                  decoding="async"
+                  onerror="this.onerror=null; this.src='a1.jpg';"
+                />
+                
+                <!-- Floating Blueprint Pill Tag -->
+                <div class="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 bg-graphite/90 text-white text-[11px] font-mono tracking-wider backdrop-blur-sm border border-white/20">
+                  <i data-lucide="file-code-2" class="w-3.5 h-3.5 text-bronze"></i>
+                  <span>תוכנית עבודה</span>
+                </div>
+
+                <!-- Inspect High-Res Button -->
+                <button 
+                  onclick="event.stopPropagation(); openLightbox('a1.jpeg', 'תוכנית עבודה אדריכלית - פרויקט A', 'שרטוט CAD מפורט, פריסות ומידות מדויקות')"
+                  class="absolute top-4 left-4 p-2 bg-graphite/80 hover:bg-bronze text-white rounded-none border border-white/20 transition-colors shadow-sm"
+                  title="בחינת תוכנית ברזולוציה מלאה"
+                  aria-label="בחינת תוכנית"
+                >
+                  <i data-lucide="zoom-in" class="w-4 h-4"></i>
+                </button>
+
+                <!-- Hint to Flip -->
+                <div class="absolute bottom-4 inset-x-4 flex items-center justify-between text-xs text-stone-300 font-light px-3 py-1.5 bg-black/60 backdrop-blur-sm border border-white/10">
+                  <span class="flex items-center gap-1">
+                    <i data-lucide="repeat" class="w-3 h-3 text-bronze"></i>
+                    <span>הפוך לצפייה בביצוע</span>
+                  </span>
+                  <span class="font-mono text-[10px] text-bronze">REV_01 // CAD</span>
+                </div>
+              </div>
+
+              <!-- Footer of Card (Front) -->
+              <div class="p-4 bg-canvas border-t border-borderStone">
+                <span class="text-[11px] font-mono text-bronze block mb-1">PROJECT 01</span>
+                <h4 class="font-display font-medium text-base text-graphite">מערך בינוי, פתחים והעמדה</h4>
+              </div>
+            </div>
+
+            <!-- BACK: Completed Physical Space (a2.jpeg) -->
+            <div class="absolute inset-0 w-full h-full backface-hidden rotate-y-180 bg-stoneSurface flex flex-col justify-between overflow-hidden">
+              <div class="relative w-full h-full overflow-hidden bg-stone-900">
+                <img 
+                  src="a2.jpeg" 
+                  alt="הביצוע בשטח - מרחב מוגמר" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                  decoding="async"
+                  onerror="this.onerror=null; this.src='a2.jpg';"
+                />
+                
+                <!-- Floating Reality Pill Tag -->
+                <div class="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 bg-bronze text-white text-[11px] font-medium tracking-wider backdrop-blur-sm shadow-sm">
+                  <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                  <span>הביצוע בשטח</span>
+                </div>
+
+                <!-- Inspect High-Res Button -->
+                <button 
+                  onclick="event.stopPropagation(); openLightbox('a2.jpeg', 'הביצוע בשטח - פרויקט A', 'תוצאה סופית מלאה המדגימה חומריות, תאורה וגימור מושלם')"
+                  class="absolute top-4 left-4 p-2 bg-graphite/80 hover:bg-bronze text-white rounded-none border border-white/20 transition-colors shadow-sm"
+                  title="צפייה בתמונה מלאה"
+                  aria-label="צפייה בתמונה מלאה"
+                >
+                  <i data-lucide="zoom-in" class="w-4 h-4"></i>
+                </button>
+
+                <!-- Return Flip Hint -->
+                <div class="absolute bottom-4 inset-x-4 flex items-center justify-between text-xs text-white font-light px-3 py-1.5 bg-black/60 backdrop-blur-sm border border-white/10">
+                  <span class="flex items-center gap-1">
+                    <i data-lucide="rotate-ccw" class="w-3 h-3 text-bronze"></i>
+                    <span>הפוך חזרה לתוכנית</span>
+                  </span>
+                  <span class="text-[10px] text-bronze">COMPLETED</span>
+                </div>
+              </div>
+
+              <!-- Footer of Card (Back) -->
+              <div class="p-4 bg-canvas border-t border-borderStone">
+                <span class="text-[11px] font-mono text-bronze block mb-1">LIVING REALITY</span>
+                <h4 class="font-display font-medium text-base text-graphite">שילוב נגרות, גווני אבן ותאורה שקטה</h4>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- CARD 2: b1 (Plan) -> b2 (Reality) -->
+        <div class="flip-card-container group perspective-1200 h-[500px] sm:h-[530px] cursor-pointer" data-card-id="2">
+          <div class="flip-card-inner relative w-full h-full transform-style-3d shadow-md hover:shadow-2xl transition-all duration-700 border border-borderStone">
+            
+            <!-- FRONT: AutoCAD Blueprint (b1.jpeg) -->
+            <div class="absolute inset-0 w-full h-full backface-hidden bg-[#1E252B] flex flex-col justify-between overflow-hidden">
+              <div class="relative w-full h-full flex items-center justify-center p-3 bg-[#11161B]">
+                <img 
+                  src="b1.jpeg" 
+                  alt="תוכנית עבודה אדריכלית - פרויקט B" 
+                  class="w-full h-full object-contain filter contrast-125"
+                  loading="lazy"
+                  decoding="async"
+                  onerror="this.onerror=null; this.src='b1.jpg';"
+                />
+                
+                <div class="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 bg-graphite/90 text-white text-[11px] font-mono tracking-wider backdrop-blur-sm border border-white/20">
+                  <i data-lucide="file-code-2" class="w-3.5 h-3.5 text-bronze"></i>
+                  <span>תוכנית עבודה</span>
+                </div>
+
+                <button 
+                  onclick="event.stopPropagation(); openLightbox('b1.jpeg', 'תוכנית עבודה אדריכלית - פרויקט B', 'תכנון פונקציונלי של חללים רטובים, ריצוף ותשתיות')"
+                  class="absolute top-4 left-4 p-2 bg-graphite/80 hover:bg-bronze text-white rounded-none border border-white/20 transition-colors shadow-sm"
+                  title="בחינת תוכנית ברזולוציה מלאה"
+                  aria-label="בחינת תוכנית"
+                >
+                  <i data-lucide="zoom-in" class="w-4 h-4"></i>
+                </button>
+
+                <div class="absolute bottom-4 inset-x-4 flex items-center justify-between text-xs text-stone-300 font-light px-3 py-1.5 bg-black/60 backdrop-blur-sm border border-white/10">
+                  <span class="flex items-center gap-1">
+                    <i data-lucide="repeat" class="w-3 h-3 text-bronze"></i>
+                    <span>הפוך לצפייה בביצוע</span>
+                  </span>
+                  <span class="font-mono text-[10px] text-bronze">REV_02 // BATH & SUITE</span>
+                </div>
+              </div>
+
+              <div class="p-4 bg-canvas border-t border-borderStone">
+                <span class="text-[11px] font-mono text-bronze block mb-1">PROJECT 02</span>
+                <h4 class="font-display font-medium text-base text-graphite">חלוקת סוויטה, חדר רחצה ונגישות</h4>
+              </div>
+            </div>
+
+            <!-- BACK: Completed Physical Space (b2.jpeg) -->
+            <div class="absolute inset-0 w-full h-full backface-hidden rotate-y-180 bg-stoneSurface flex flex-col justify-between overflow-hidden">
+              <div class="relative w-full h-full overflow-hidden bg-stone-900">
+                <img 
+                  src="b2.jpeg" 
+                  alt="הביצוע בשטח - סוויטה מוגמרת" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                  decoding="async"
+                  onerror="this.onerror=null; this.src='b2.jpg';"
+                />
+                
+                <div class="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 bg-bronze text-white text-[11px] font-medium tracking-wider backdrop-blur-sm shadow-sm">
+                  <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                  <span>הביצוע בשטח</span>
+                </div>
+
+                <button 
+                  onclick="event.stopPropagation(); openLightbox('b2.jpeg', 'הביצוע בשטח - פרויקט B', 'חדר רחצה מעוצב בקווים נקיים עם פרטי נירוסטה וחומרים טבעיים')"
+                  class="absolute top-4 left-4 p-2 bg-graphite/80 hover:bg-bronze text-white rounded-none border border-white/20 transition-colors shadow-sm"
+                  title="צפייה בתמונה מלאה"
+                  aria-label="צפייה בתמונה מלאה"
+                >
+                  <i data-lucide="zoom-in" class="w-4 h-4"></i>
+                </button>
+
+                <div class="absolute bottom-4 inset-x-4 flex items-center justify-between text-xs text-white font-light px-3 py-1.5 bg-black/60 backdrop-blur-sm border border-white/10">
+                  <span class="flex items-center gap-1">
+                    <i data-lucide="rotate-ccw" class="w-3 h-3 text-bronze"></i>
+                    <span>הפוך חזרה לתוכנית</span>
+                  </span>
+                  <span class="text-[10px] text-bronze">COMPLETED</span>
+                </div>
+              </div>
+
+              <div class="p-4 bg-canvas border-t border-borderStone">
+                <span class="text-[11px] font-mono text-bronze block mb-1">LIVING REALITY</span>
+                <h4 class="font-display font-medium text-base text-graphite">אינטימיות, חמימות ודיוק בפרטי הנגרות</h4>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- CARD 3: c1 (Plan) -> c2 (Reality) -->
+        <div class="flip-card-container group perspective-1200 h-[500px] sm:h-[530px] cursor-pointer" data-card-id="3">
+          <div class="flip-card-inner relative w-full h-full transform-style-3d shadow-md hover:shadow-2xl transition-all duration-700 border border-borderStone">
+            
+            <!-- FRONT: AutoCAD Blueprint (c1.jpeg) -->
+            <div class="absolute inset-0 w-full h-full backface-hidden bg-[#1E252B] flex flex-col justify-between overflow-hidden">
+              <div class="relative w-full h-full flex items-center justify-center p-3 bg-[#11161B]">
+                <img 
+                  src="c1.jpeg" 
+                  alt="תוכנית עבודה אדריכלית - פרויקט C" 
+                  class="w-full h-full object-contain filter contrast-125"
+                  loading="lazy"
+                  decoding="async"
+                  onerror="this.onerror=null; this.src='c1.jpg';"
+                />
+                
+                <div class="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 bg-graphite/90 text-white text-[11px] font-mono tracking-wider backdrop-blur-sm border border-white/20">
+                  <i data-lucide="file-code-2" class="w-3.5 h-3.5 text-bronze"></i>
+                  <span>תוכנית עבודה</span>
+                </div>
+
+                <button 
+                  onclick="event.stopPropagation(); openLightbox('c1.jpeg', 'תוכנית עבודה אדריכלית - פרויקט C', 'תכנון מטבח וחלל אירוח פתוח עם שילוב אי מרכזי')"
+                  class="absolute top-4 left-4 p-2 bg-graphite/80 hover:bg-bronze text-white rounded-none border border-white/20 transition-colors shadow-sm"
+                  title="בחינת תוכנית ברזולוציה מלאה"
+                  aria-label="בחינת תוכנית"
+                >
+                  <i data-lucide="zoom-in" class="w-4 h-4"></i>
+                </button>
+
+                <div class="absolute bottom-4 inset-x-4 flex items-center justify-between text-xs text-stone-300 font-light px-3 py-1.5 bg-black/60 backdrop-blur-sm border border-white/10">
+                  <span class="flex items-center gap-1">
+                    <i data-lucide="repeat" class="w-3 h-3 text-bronze"></i>
+                    <span>הפוך לצפייה בביצוע</span>
+                  </span>
+                  <span class="font-mono text-[10px] text-bronze">REV_03 // KITCHEN DETAIL</span>
+                </div>
+              </div>
+
+              <div class="p-4 bg-canvas border-t border-borderStone">
+                <span class="text-[11px] font-mono text-bronze block mb-1">PROJECT 03</span>
+                <h4 class="font-display font-medium text-base text-graphite">מערך מטבח, אי עבודה ואחסון סמוי</h4>
+              </div>
+            </div>
+
+            <!-- BACK: Completed Physical Space (c2.jpeg) -->
+            <div class="absolute inset-0 w-full h-full backface-hidden rotate-y-180 bg-stoneSurface flex flex-col justify-between overflow-hidden">
+              <div class="relative w-full h-full overflow-hidden bg-stone-900">
+                <img 
+                  src="c2.jpeg" 
+                  alt="הביצוע בשטח - מטבח ואירוח" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                  decoding="async"
+                  onerror="this.onerror=null; this.src='c2.jpg';"
+                />
+                
+                <div class="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 bg-bronze text-white text-[11px] font-medium tracking-wider backdrop-blur-sm shadow-sm">
+                  <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                  <span>הביצוע בשטח</span>
+                </div>
+
+                <button 
+                  onclick="event.stopPropagation(); openLightbox('c2.jpeg', 'הביצוע בשטח - פרויקט C', 'מרחב מוגמר בו הנגרות המותאמת אישית פוגשת פונקציונליות וארגונומיה יומיומית')"
+                  class="absolute top-4 left-4 p-2 bg-graphite/80 hover:bg-bronze text-white rounded-none border border-white/20 transition-colors shadow-sm"
+                  title="צפייה בתמונה מלאה"
+                  aria-label="צפייה בתמונה מלאה"
+                >
+                  <i data-lucide="zoom-in" class="w-4 h-4"></i>
+                </button>
+
+                <div class="absolute bottom-4 inset-x-4 flex items-center justify-between text-xs text-white font-light px-3 py-1.5 bg-black/60 backdrop-blur-sm border border-white/10">
+                  <span class="flex items-center gap-1">
+                    <i data-lucide="rotate-ccw" class="w-3 h-3 text-bronze"></i>
+                    <span>הפוך חזרה לתוכנית</span>
+                  </span>
+                  <span class="text-[10px] text-bronze">COMPLETED</span>
+                </div>
+              </div>
+
+              <div class="p-4 bg-canvas border-t border-borderStone">
+                <span class="text-[11px] font-mono text-bronze block mb-1">LIVING REALITY</span>
+                <h4 class="font-display font-medium text-base text-graphite">הרמוניה בין משטחי עבודה, אחסון ואווירה</h4>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- 5. PROJECT BLUEPRINTS & PORTFOLIO DRAWER (PDF SHOWCASE)   -->
+  <!-- ========================================================= -->
+  <section id="blueprints" class="py-24 sm:py-32 bg-stoneSurface/60 border-b border-borderStone blueprint-pattern">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      
+      <!-- Section Header -->
+      <div class="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
+        <div class="inline-flex items-center gap-2 text-xs uppercase font-semibold tracking-widest text-bronze mb-3">
+          <i data-lucide="folder-git-2" class="w-3.5 h-3.5"></i>
+          <span>תיקי תוכניות וביצוע</span>
+        </div>
+        <h2 class="font-display font-medium text-3xl sm:text-4xl md:text-5xl text-graphite tracking-tight mb-4">
+          ספרי תוכניות ושינויי דיירים רשמיים
+        </h2>
+        <p class="text-sm sm:text-base text-slateMuted font-light">
+          עיון ישיר בקובצי ה-AutoCAD וההגשות הרשמיות של הסטודיו. כל חוברת כוללת סט מלא של תוכניות הריסה, בינוי, חשמל, תאורה, אינסטלציה ונגרות.
+        </p>
+      </div>
+
+      <!-- PDF Showcase Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- PDF Card 1: אלפי מנשה -->
+        <div class="bg-canvas border border-borderStone hover:border-bronze transition-all duration-300 p-8 flex flex-col justify-between shadow-sm hover:shadow-lg relative group">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="px-2.5 py-1 bg-stoneSurface border border-borderStone text-[11px] font-mono text-slateMuted">
+                סט שינויי דיירים מקיף
+              </span>
+              <div class="w-10 h-10 rounded-full bg-bronze/10 text-bronze flex items-center justify-center group-hover:scale-110 transition-transform">
+                <i data-lucide="file-text" class="w-5 h-5"></i>
+              </div>
+            </div>
+
+            <h3 class="font-display font-medium text-2xl text-graphite mb-2">פרויקט אלפי מנשה</h3>
+            <p class="text-xs font-mono text-bronze mb-4">ALFEI MENASHE RESIDENCE</p>
+            <p class="text-sm text-slateMuted font-light leading-relaxed mb-6">
+              תכנון מחדש של מרחב המגורים, התאמת תשתיות חשמל ואינסטלציה מול הקבלן המבצע, ופתרונות נגרות מובנים.
+            </p>
+          </div>
+
+          <div class="pt-6 border-t border-borderStone/80 space-y-3">
+            <a 
+              href="prot/אלפי מנשה-שינויי דיירים.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="w-full inline-flex items-center justify-center gap-2 py-3 bg-graphite hover:bg-bronze text-white text-xs font-semibold tracking-wide transition-colors"
+            >
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              <span>צפייה בתוכנית (PDF)</span>
+            </a>
+            
+            <a 
+              href="prot/אלפי מנשה-שינויי דיירים.pdf" 
+              download 
+              class="w-full inline-flex items-center justify-center gap-2 py-2.5 border border-borderStone hover:border-graphite text-graphite text-xs font-medium tracking-wide transition-colors"
+            >
+              <i data-lucide="download" class="w-3.5 h-3.5 text-slateMuted"></i>
+              <span>הורדת קובץ תוכניות מלא</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- PDF Card 2: סטאחי -->
+        <div class="bg-canvas border border-borderStone hover:border-bronze transition-all duration-300 p-8 flex flex-col justify-between shadow-sm hover:shadow-lg relative group">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="px-2.5 py-1 bg-stoneSurface border border-borderStone text-[11px] font-mono text-slateMuted">
+                תכנון ועיצוב פנים
+              </span>
+              <div class="w-10 h-10 rounded-full bg-bronze/10 text-bronze flex items-center justify-center group-hover:scale-110 transition-transform">
+                <i data-lucide="file-text" class="w-5 h-5"></i>
+              </div>
+            </div>
+
+            <h3 class="font-display font-medium text-2xl text-graphite mb-2">פרויקט סטאחי</h3>
+            <p class="text-xs font-mono text-bronze mb-4">STAHI INTERIOR & ARCHITECTURE</p>
+            <p class="text-sm text-slateMuted font-light leading-relaxed mb-6">
+              חוברת שינויי דיירים הכוללת פריסות מפורטות לחדרי רחצה, תכנון תקרות מונמכות עם תאורה שקועה ופריסת ריצוף מדויקת.
+            </p>
+          </div>
+
+          <div class="pt-6 border-t border-borderStone/80 space-y-3">
+            <a 
+              href="prot/סטאחי-שינויי דיירים.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="w-full inline-flex items-center justify-center gap-2 py-3 bg-graphite hover:bg-bronze text-white text-xs font-semibold tracking-wide transition-colors"
+            >
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              <span>צפייה בתוכנית (PDF)</span>
+            </a>
+            
+            <a 
+              href="prot/סטאחי-שינויי דיירים.pdf" 
+              download 
+              class="w-full inline-flex items-center justify-center gap-2 py-2.5 border border-borderStone hover:border-graphite text-graphite text-xs font-medium tracking-wide transition-colors"
+            >
+              <i data-lucide="download" class="w-3.5 h-3.5 text-slateMuted"></i>
+              <span>הורדת קובץ תוכניות מלא</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- PDF Card 3: פוגל -->
+        <div class="bg-canvas border border-borderStone hover:border-bronze transition-all duration-300 p-8 flex flex-col justify-between shadow-sm hover:shadow-lg relative group">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="px-2.5 py-1 bg-stoneSurface border border-borderStone text-[11px] font-mono text-slateMuted">
+                תוכניות בינוי ושינויים
+              </span>
+              <div class="w-10 h-10 rounded-full bg-bronze/10 text-bronze flex items-center justify-center group-hover:scale-110 transition-transform">
+                <i data-lucide="file-text" class="w-5 h-5"></i>
+              </div>
+            </div>
+
+            <h3 class="font-display font-medium text-2xl text-graphite mb-2">פרויקט פוגל</h3>
+            <p class="text-xs font-mono text-bronze mb-4">VOGEL RESIDENCE BLUEPRINT</p>
+            <p class="text-sm text-slateMuted font-light leading-relaxed mb-6">
+              מערך תוכניות הריסה ובנייה מחודש, מפרטי מיזוג אוויר וסנכרון מלא מול יועצי אינסטלציה ומפקח הפרויקט.
+            </p>
+          </div>
+
+          <div class="pt-6 border-t border-borderStone/80 space-y-3">
+            <a 
+              href="prot/פוגל-שינויי דיירים.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="w-full inline-flex items-center justify-center gap-2 py-3 bg-graphite hover:bg-bronze text-white text-xs font-semibold tracking-wide transition-colors"
+            >
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              <span>צפייה בתוכנית (PDF)</span>
+            </a>
+            
+            <a 
+              href="prot/פוגל-שינויי דיירים.pdf" 
+              download 
+              class="w-full inline-flex items-center justify-center gap-2 py-2.5 border border-borderStone hover:border-graphite text-graphite text-xs font-medium tracking-wide transition-colors"
+            >
+              <i data-lucide="download" class="w-3.5 h-3.5 text-slateMuted"></i>
+              <span>הורדת קובץ תוכניות מלא</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- 6. ABOUT & STUDIO PRACTICE (EDITORIAL SPLIT-SCREEN)       -->
+  <!-- ========================================================= -->
+  <section id="about" class="py-24 sm:py-32 bg-canvas border-b border-borderStone">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <!-- SIDE A: Artistic Architectural Composition Frame (No AI Face) -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            
+            <!-- Outer architectural border frame -->
+            <div class="absolute -inset-3 border border-bronze/40 translate-x-2 -translate-y-2 pointer-events-none"></div>
+            
+            <!-- Inner container -->
+            <div class="relative bg-stoneSurface overflow-hidden border border-borderStone shadow-xl aspect-[4/5]">
+              <img 
+                src="1.jpeg" 
+                alt="נחמי בוקשפן - קומפוזיציה אדריכלית" 
+                class="w-full h-full object-cover filter contrast-[1.05] brightness-95"
+                loading="lazy"
+                decoding="async"
+                onerror="this.onerror=null; this.src='image_1.jpeg';"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-graphite/80 via-transparent to-transparent"></div>
+              
+              <div class="absolute bottom-6 right-6 left-6 text-white">
+                <span class="text-xs font-mono text-bronze block mb-1">STUDIO NECHAMI BOOKSHPAN</span>
+                <p class="font-display text-lg font-light">"השלמות נמצאת במקום שבו אין עוד מה לגרוע."</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- SIDE B: Studio Practice & Statement -->
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-2 text-xs uppercase font-semibold tracking-widest text-bronze mb-3">
+            <i data-lucide="award" class="w-3.5 h-3.5"></i>
+            <span>אודות הסטודיו</span>
+          </div>
+          
+          <h2 class="font-display font-medium text-3xl sm:text-4xl text-graphite tracking-tight mb-6">
+            נחמי בוקשפן
+            <span class="block text-xl font-normal text-slateMuted mt-1">אדריכלית, מעצבת פנים ומומחית לשינויי דיירים</span>
+          </h2>
+
+          <div class="space-y-4 text-slateMuted font-light leading-relaxed text-base mb-8">
+            <p>
+              אני מאמינה שבית הוא העוגן העמוק ביותר של האדם. תפקידו של האדריכל הוא לא לכפות גחמות עיצוביות רגעיות, אלא לזקק את אורח החיים הייחודי של המשפחה, להעניק לו מענה מדויק ולבנות סביבו מעטפת חמה, פרקטית ועל-זמנית.
+            </p>
+            <p>
+              לאורך שנות פעילותי בסטודיו ליוויתי עשרות משפחות משלב התוכנית הראשונית על הדף ועד הכניסה לבית. המומחיות המיוחדת שפיתחתי בניהול <strong>שינויי דיירים מול קבלני ביצוע</strong> מאפשרת ללקוחותיי לעבור את התהליך ברוגע, ללא עיכובים, תוך ניצול מלא של תקציב השינויים ומניעת טעויות יקרות.
+            </p>
+          </div>
+
+          <!-- Core Services List -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6 border-t border-borderStone">
+            <div class="flex items-start gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-bronze mt-0.5 flex-shrink-0"></i>
+              <div>
+                <h4 class="font-display font-medium text-sm text-graphite">תכנון אדריכלי לבתים פרטיים</h4>
+                <p class="text-xs text-slateMuted font-light">העמדה על המגרש, תוכניות בינוי וחלוקה ארגונומית.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-bronze mt-0.5 flex-shrink-0"></i>
+              <div>
+                <h4 class="font-display font-medium text-sm text-graphite">שינויי דיירים מורכבים מול קבלנים</h4>
+                <p class="text-xs text-slateMuted font-light">הגשת סטים רשמיים, סנכרון מערכות וניהול לוחות זמנים.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-bronze mt-0.5 flex-shrink-0"></i>
+              <div>
+                <h4 class="font-display font-medium text-sm text-graphite">ליווי ופיקוח עליון בשטח</h4>
+                <p class="text-xs text-slateMuted font-light">בקרת איכות על ביצוע התוכניות ווידוא עמידה במפרט.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-bronze mt-0.5 flex-shrink-0"></i>
+              <div>
+                <h4 class="font-display font-medium text-sm text-graphite">עיצוב פנים והלבשת הבית</h4>
+                <p class="text-xs text-slateMuted font-light">בחירת פלטת חומרים, טקסטיל, תאורה ונגרות בהתאמה אישית.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- 7. CONTACT, FOOTER & MINIMALIST INQUIRY                   -->
+  <!-- ========================================================= -->
+  <section id="contact" class="py-24 sm:py-32 bg-stoneSurface/70 border-b border-borderStone relative">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        
+        <!-- Contact Left: Information & Presence -->
+        <div class="lg:col-span-5 flex flex-col justify-between">
+          <div>
+            <div class="inline-flex items-center gap-2 text-xs uppercase font-semibold tracking-widest text-bronze mb-3">
+              <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+              <span>יצירת קשר</span>
+            </div>
+            
+            <h2 class="font-display font-medium text-3xl sm:text-4xl text-graphite tracking-tight mb-4">
+              בואו נתכנן את הבית שלכם יחד.
+            </h2>
+            
+            <p class="text-sm text-slateMuted font-light leading-relaxed mb-10">
+              מתחילים פרויקט בנייה, שיפוץ מקיף או קיבלתם מפתח לדירת קבלן? אשמח להיפגש לכוס קפה, לעבור על התוכניות ולהגדיר את השלבים הבאים.
+            </p>
+
+            <div class="space-y-6">
+              <a href="tel:0500000000" class="flex items-center gap-4 text-graphite hover:text-bronze transition-colors group">
+                <div class="w-12 h-12 bg-canvas border border-borderStone flex items-center justify-center text-bronze group-hover:bg-bronze group-hover:text-white transition-colors">
+                  <i data-lucide="phone" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <span class="text-xs text-slateMuted block font-mono">טלפון ישיר</span>
+                  <span class="font-display font-medium text-base dir-ltr text-right">050-000-0000</span>
+                </div>
+              </a>
+
+              <a href="mailto:contact@nechami-arch.co.il" class="flex items-center gap-4 text-graphite hover:text-bronze transition-colors group">
+                <div class="w-12 h-12 bg-canvas border border-borderStone flex items-center justify-center text-bronze group-hover:bg-bronze group-hover:text-white transition-colors">
+                  <i data-lucide="mail" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <span class="text-xs text-slateMuted block font-mono">דואר אלקטרוני</span>
+                  <span class="font-display font-medium text-base">contact@nechami-arch.co.il</span>
+                </div>
+              </a>
+
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 text-graphite hover:text-bronze transition-colors group">
+                <div class="w-12 h-12 bg-canvas border border-borderStone flex items-center justify-center text-bronze group-hover:bg-bronze group-hover:text-white transition-colors">
+                  <i data-lucide="instagram" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <span class="text-xs text-slateMuted block font-mono">אינסטגרם</span>
+                  <span class="font-display font-medium text-base">@nechami_architecture</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="mt-12 pt-8 border-t border-borderStone/80 text-xs text-slateMuted font-light">
+            זמינות לפרויקטים חדשים באזור המרכז, ירושלים והשרון.
+          </div>
+        </div>
+
+        <!-- Contact Right: Minimalist Form -->
+        <div class="lg:col-span-7 bg-canvas border border-borderStone p-8 sm:p-12 shadow-sm">
+          <h3 class="font-display font-medium text-xl text-graphite mb-2">טופס פנייה לפגישת ייעוץ</h3>
+          <p class="text-xs text-slateMuted font-light mb-8">אנא מלאו את הפרטים ונחזור אליכם בהקדם לתיאום פגישה ראשונית.</p>
+
+          <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label for="name" class="block text-xs font-mono text-slateMuted uppercase mb-2">שם מלא *</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  required
+                  class="w-full px-4 py-3 bg-stoneSurface/40 border border-borderStone focus:border-bronze focus:bg-white text-graphite text-sm outline-none transition-all"
+                  placeholder="ישראל ישראלי"
+                />
+              </div>
+
+              <div>
+                <label for="phone" class="block text-xs font-mono text-slateMuted uppercase mb-2">טלפון *</label>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="phone" 
+                  required
+                  class="w-full px-4 py-3 bg-stoneSurface/40 border border-borderStone focus:border-bronze focus:bg-white text-graphite text-sm outline-none transition-all"
+                  placeholder="050-0000000"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label for="email" class="block text-xs font-mono text-slateMuted uppercase mb-2">אימייל</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  class="w-full px-4 py-3 bg-stoneSurface/40 border border-borderStone focus:border-bronze focus:bg-white text-graphite text-sm outline-none transition-all"
+                  placeholder="name@example.com"
+                />
+              </div>
+
+              <div>
+                <label for="projectType" class="block text-xs font-mono text-slateMuted uppercase mb-2">סוג הפרויקט *</label>
+                <select 
+                  id="projectType" 
+                  name="projectType" 
+                  required
+                  class="w-full px-4 py-3 bg-stoneSurface/40 border border-borderStone focus:border-bronze focus:bg-white text-graphite text-sm outline-none transition-all"
+                >
+                  <option value="" disabled selected>בחירת סוג פרויקט</option>
+                  <option value="שינויי דיירים (דירת קבלן)">שינויי דיירים (דירת קבלן)</option>
+                  <option value="בית פרטי חדש">תכנון בית פרטי חדש</option>
+                  <option value="שיפוץ מקיף ותכנון מחדש">שיפוץ מקיף ותכנון מחדש</option>
+                  <option value="עיצוב פנים והלבשה">עיצוב פנים והלבשה</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="message" class="block text-xs font-mono text-slateMuted uppercase mb-2">פרטים נוספים על הפרויקט</label>
+              <textarea 
+                id="message" 
+                name="message" 
+                rows="4" 
+                class="w-full px-4 py-3 bg-stoneSurface/40 border border-borderStone focus:border-bronze focus:bg-white text-graphite text-sm outline-none transition-all resize-none"
+                placeholder="מיקום הנכס, שלב הפרויקט (לפני קנייה / מול קבלן / לקראת היתר) ודגשים מיוחדים..."
+              ></textarea>
+            </div>
+
+            <button 
+              type="submit" 
+              class="w-full py-4 bg-graphite hover:bg-bronze text-white text-xs font-semibold tracking-wider uppercase transition-all duration-300 shadow-md flex items-center justify-center gap-2"
+            >
+              <span>שליחת פנייה לתיאום פגישה</span>
+              <i data-lucide="send" class="w-3.5 h-3.5"></i>
+            </button>
+
+            <!-- Success message toast container -->
+            <div id="form-success" class="hidden p-4 bg-stoneSurface border border-bronze/40 text-graphite text-sm text-center">
+              תודה רבה! פנייתכם התקבלה בהצלחה, ניצור עמכם קשר בהקדם.
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- FOOTER                                                    -->
+  <!-- ========================================================= -->
+  <footer class="py-12 bg-graphite text-canvas border-t border-graphite">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <div class="flex flex-col items-center md:items-start">
+        <span class="font-display font-medium text-lg text-white tracking-wide">נחמי בוקשפן</span>
+        <span class="text-xs text-stone-400 font-light tracking-wider">אדריכלות • שינויי דיירים • עיצוב פנים</span>
+      </div>
+
+      <div class="flex items-center gap-8 text-xs text-stone-400 font-light">
+        <a href="#hero" class="hover:text-bronze transition-colors">ראשי</a>
+        <a href="#philosophy" class="hover:text-bronze transition-colors">פילוסופיה</a>
+        <a href="#transformation" class="hover:text-bronze transition-colors">מהתוכנית למציאות</a>
+        <a href="#blueprints" class="hover:text-bronze transition-colors">פרויקטים</a>
+        <a href="#about" class="hover:text-bronze transition-colors">אודות</a>
+        <a href="#contact" class="hover:text-bronze transition-colors">צור קשר</a>
+      </div>
+
+      <div class="text-xs text-stone-500 font-mono">
+        © <span id="year"></span> נחמי בוקשפן. כל הזכויות שמורות.
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ========================================================= -->
+  <!-- SMART FLOATING WHATSAPP BUTTON (BOTTOM-LEFT)             -->
+  <!-- ========================================================= -->
+  <a 
+    href="https://wa.me/972500000000?text=%D7%94%D7%99%D7%99%20%D7%A0%D7%97%D7%9E%D7%99%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%94%D7%99%D7%99%D7%A2%D7%A5%20%D7%95%D7%9C%D7%AA%D7%90%D7%9D%20%D7%A4%D7%92%D7%99%D7%A9%D7%94" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    class="fixed bottom-6 left-6 z-40 flex items-center gap-3 bg-[#25D366] text-white pl-4 pr-5 py-3 rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 whatsapp-glow group focus:outline-none"
+    aria-label="שיחה בוואטסאפ עם נחמי בוקשפן"
+  >
+    <div class="w-6 h-6 flex items-center justify-center">
+      <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.05 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </div>
+    <span class="text-xs font-semibold tracking-wide hidden sm:inline">התייעצות בוואטסאפ</span>
+  </a>
+
+
+  <!-- ========================================================= -->
+  <!-- FULLSCREEN LIGHTBOX / DETAIL INSPECTION MODAL             -->
+  <!-- ========================================================= -->
+  <div id="lightbox-modal" class="fixed inset-0 z-50 hidden bg-graphite/95 backdrop-blur-md flex items-center justify-center p-4 sm:p-8" onclick="closeLightbox()">
+    
+    <!-- Modal Close Button -->
+    <button 
+      onclick="closeLightbox()" 
+      class="absolute top-6 left-6 p-2 text-white hover:text-bronze transition-colors focus:outline-none z-10"
+      aria-label="סגירת תצוגה מוגדלת"
+    >
+      <i data-lucide="x" class="w-8 h-8"></i>
+    </button>
+
+    <!-- Modal Content Box -->
+    <div class="relative max-w-5xl max-h-[90vh] flex flex-col items-center" onclick="event.stopPropagation()">
+      <div class="relative overflow-hidden bg-black/40 border border-white/20 p-2 shadow-2xl">
+        <img 
+          id="lightbox-img" 
+          src="" 
+          alt="תצוגה מוגדלת" 
+          class="max-w-full max-h-[75vh] object-contain"
+        />
+      </div>
+
+      <div class="mt-4 text-center text-white">
+        <h4 id="lightbox-title" class="font-display font-medium text-lg"></h4>
+        <p id="lightbox-desc" class="text-xs font-light text-stone-300 mt-1 max-w-xl"></p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================================= -->
+  <!-- MODERN VANILLA JAVASCRIPT LOGIC                           -->
+  <!-- ========================================================= -->
+  <script>
+    // Initialize Lucide Icons
+    document.addEventListener("DOMContentLoaded", () => {
+      lucide.createIcons();
+      document.getElementById('year').textContent = new Date().getFullYear();
+      initNavObserver();
+      initMobileMenu();
+      init3DFlipTouch();
+    });
+
+    // 1. Mobile Menu Toggle
+    function initMobileMenu() {
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      const links = document.querySelectorAll('.mobile-nav-link');
+
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
+
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          menu.classList.add('hidden');
+        });
+      });
+    }
+
+    // 2. Active Navigation Section via IntersectionObserver
+    function initNavObserver() {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinks.forEach(link => {
+              const indicator = link.querySelector('.indicator');
+              if (link.getAttribute('data-target') === id) {
+                link.classList.add('text-graphite');
+                link.classList.remove('text-slateMuted');
+                if (indicator) indicator.classList.remove('scale-x-0');
+              } else {
+                link.classList.remove('text-graphite');
+                link.classList.add('text-slateMuted');
+                if (indicator) indicator.classList.add('scale-x-0');
+              }
+            });
+          }
+        });
+      }, {
+        rootMargin: '-30% 0px -60% 0px'
+      });
+
+      sections.forEach(section => observer.observe(section));
+    }
+
+    // 3. Touch & Click Flip Handling for 3D Cards
+    function init3DFlipTouch() {
+      const flipContainers = document.querySelectorAll('.flip-card-container');
+      
+      flipContainers.forEach(container => {
+        const inner = container.querySelector('.flip-card-inner');
+        
+        container.addEventListener('click', (e) => {
+          // If clicked inside the zoom button or modal, do not flip
+          if (e.target.closest('button')) return;
+          
+          inner.classList.toggle('is-flipped');
+        });
+      });
+    }
+
+    // 4. High-Resolution Inspection Lightbox
+    function openLightbox(src, title, description) {
+      const modal = document.getElementById('lightbox-modal');
+      const img = document.getElementById('lightbox-img');
+      const titleElem = document.getElementById('lightbox-title');
+      const descElem = document.getElementById('lightbox-desc');
+
+      img.src = src;
+      titleElem.textContent = title;
+      descElem.textContent = description;
+
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      lucide.createIcons();
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById('lightbox-modal');
+      modal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close on Escape Key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeLightbox();
+      }
+    });
+
+    // 5. Contact Form Submission (Feedback)
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('contact-form');
+      const successMsg = document.getElementById('form-success');
+      
+      // Simulate submission feedback
+      successMsg.classList.remove('hidden');
+      form.reset();
+      
+      setTimeout(() => {
+        successMsg.classList.add('hidden');
+      }, 5000);
+    }
+  </script>
+
+</body>
+</html>
