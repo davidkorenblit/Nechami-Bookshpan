@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>נחמי בוקשפן | הנדסאית אדריכלות ושירותי שרטוט פרילנס</title>
-  <meta name="description" content="נחמי בוקשפן – הנדסאית אדריכלות ועיצוב פנים. שירותי שרטוט פרילנס ברמה הגבוהה ביותר: שרטוט ותכנון אדריכלי, סט תכניות מלא לעבודה, ושינויי דיירים.">
-  
+  <meta name="description"
+    content="נחמי בוקשפן – הנדסאית אדריכלות ועיצוב פנים. שירותי שרטוט פרילנס ברמה הגבוהה ביותר: שרטוט ותכנון אדריכלי, סט תכניות מלא לעבודה, ושינויי דיירים.">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
   <!-- Favicon / Brand SVG -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231A1A1A'/><text x='50' y='64' font-size='46' font-family='sans-serif' font-weight='300' fill='%23FAF9F6' text-anchor='middle'>NB</text></svg>">
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231A1A1A'/><text x='50' y='64' font-size='46' font-family='sans-serif' font-weight='300' fill='%23FAF9F6' text-anchor='middle'>NB</text></svg>">
 
   <!-- Google Fonts: Heebo (display) & Assistant (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&family=Heebo:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -58,7 +64,11 @@
       overflow-x: hidden;
     }
 
-    h1, h2, h3, h4, .font-display {
+    h1,
+    h2,
+    h3,
+    h4,
+    .font-display {
       font-family: 'Heebo', sans-serif;
     }
 
@@ -66,13 +76,16 @@
     ::-webkit-scrollbar {
       width: 7px;
     }
+
     ::-webkit-scrollbar-track {
       background: #FAF9F6;
     }
+
     ::-webkit-scrollbar-thumb {
       background: #D8D4CC;
       border-radius: 4px;
     }
+
     ::-webkit-scrollbar-thumb:hover {
       background: #A38A67;
     }
@@ -82,36 +95,49 @@
       perspective: 1200px;
       -webkit-perspective: 1200px;
     }
+
     .transform-style-3d {
       transform-style: preserve-3d;
       -webkit-transform-style: preserve-3d;
       transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
     }
+
     .backface-hidden {
       backface-visibility: hidden;
       -webkit-backface-visibility: hidden;
     }
+
     .rotate-y-180 {
       transform: rotateY(180deg);
       -webkit-transform: rotateY(180deg);
     }
-    
+
     /* Desktop Hover Flip + Touch .is-flipped class */
     @media (hover: hover) and (pointer: fine) {
       .group:hover .flip-card-inner:not(.manual-lock) {
         transform: rotateY(180deg);
       }
     }
+
     .flip-card-inner.is-flipped {
       transform: rotateY(180deg) !important;
     }
 
     /* Ambient Hero Ken Burns */
     @keyframes subtleKenBurns {
-      0% { transform: scale(1.0); }
-      50% { transform: scale(1.06); }
-      100% { transform: scale(1.0); }
+      0% {
+        transform: scale(1.0);
+      }
+
+      50% {
+        transform: scale(1.06);
+      }
+
+      100% {
+        transform: scale(1.0);
+      }
     }
+
     .hero-ken-burns {
       animation: subtleKenBurns 24s ease-in-out infinite alternate;
     }
@@ -119,17 +145,26 @@
     /* Blueprint Grid Texture Overlay */
     .blueprint-pattern {
       background-size: 24px 24px;
-      background-image: 
+      background-image:
         linear-gradient(to right, rgba(163, 138, 103, 0.06) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(163, 138, 103, 0.06) 1px, transparent 1px);
     }
 
     /* Pulse Glow for WhatsApp */
     @keyframes pulseGlow {
-      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
-      70% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+      }
+
+      70% {
+        box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
     }
+
     .whatsapp-glow {
       animation: pulseGlow 2.5s infinite;
     }
@@ -141,12 +176,14 @@
   <!-- ========================================================= -->
   <!-- 1. STICKY GLASSMORPHIC HEADER & NAVIGATION                -->
   <!-- ========================================================= -->
-  <header id="site-header" class="fixed top-0 inset-x-0 z-40 transition-all duration-300 border-b border-borderStone/60 bg-[#FAF9F6]/85 backdrop-blur-md">
+  <header id="site-header"
+    class="fixed top-0 inset-x-0 z-40 transition-all duration-300 border-b border-borderStone/60 bg-[#FAF9F6]/85 backdrop-blur-md">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between">
-      
+
       <!-- Brand Logo -->
       <a href="#hero" class="group flex flex-col items-start focus:outline-none">
-        <span class="font-display font-medium text-xl sm:text-2xl tracking-wide text-graphite group-hover:text-bronze transition-colors duration-200">
+        <span
+          class="font-display font-medium text-xl sm:text-2xl tracking-wide text-graphite group-hover:text-bronze transition-colors duration-200">
           נחמי בוקשפן
         </span>
         <span class="text-[11px] font-light text-slateMuted tracking-wider uppercase">
@@ -156,62 +193,76 @@
 
       <!-- Desktop Navigation Links -->
       <nav class="hidden md:flex items-center gap-7 lg:gap-8 text-sm font-medium text-slateMuted">
-        <a href="#hero" class="nav-link transition-colors hover:text-graphite py-1 text-graphite relative" data-target="hero">
+        <a href="#hero" class="nav-link transition-colors hover:text-graphite py-1 text-graphite relative"
+          data-target="hero">
           ראשי
           <span class="indicator absolute bottom-0 right-0 left-0 h-[2px] bg-bronze transition-all duration-200"></span>
         </a>
         <a href="#services" class="nav-link transition-colors hover:text-graphite py-1 relative" data-target="services">
           שירותים
-          <span class="indicator absolute bottom-0 right-0 left-0 h-[2px] bg-bronze scale-x-0 transition-all duration-200"></span>
+          <span
+            class="indicator absolute bottom-0 right-0 left-0 h-[2px] bg-bronze scale-x-0 transition-all duration-200"></span>
         </a>
-        <a href="#transformation" class="nav-link transition-colors hover:text-graphite py-1 relative" data-target="transformation">
+        <a href="#transformation" class="nav-link transition-colors hover:text-graphite py-1 relative"
+          data-target="transformation">
           מהתוכנית למציאות
-          <span class="indicator absolute bottom-0 right-0 left-0 h-[2px] bg-bronze scale-x-0 transition-all duration-200"></span>
+          <span
+            class="indicator absolute bottom-0 right-0 left-0 h-[2px] bg-bronze scale-x-0 transition-all duration-200"></span>
         </a>
-        <a href="#blueprints" class="nav-link transition-colors hover:text-graphite py-1 relative" data-target="blueprints">
+        <a href="#blueprints" class="nav-link transition-colors hover:text-graphite py-1 relative"
+          data-target="blueprints">
           תיק תוכניות ועבודות
-          <span class="indicator absolute bottom-0 right-0 left-0 h-[2px] bg-bronze scale-x-0 transition-all duration-200"></span>
+          <span
+            class="indicator absolute bottom-0 right-0 left-0 h-[2px] bg-bronze scale-x-0 transition-all duration-200"></span>
         </a>
         <a href="#about" class="nav-link transition-colors hover:text-graphite py-1 relative" data-target="about">
           אודות
-          <span class="indicator absolute bottom-0 right-0 left-0 h-[2px] bg-bronze scale-x-0 transition-all duration-200"></span>
+          <span
+            class="indicator absolute bottom-0 right-0 left-0 h-[2px] bg-bronze scale-x-0 transition-all duration-200"></span>
         </a>
         <a href="#contact" class="nav-link transition-colors hover:text-graphite py-1 relative" data-target="contact">
           צור קשר
-          <span class="indicator absolute bottom-0 right-0 left-0 h-[2px] bg-bronze scale-x-0 transition-all duration-200"></span>
+          <span
+            class="indicator absolute bottom-0 right-0 left-0 h-[2px] bg-bronze scale-x-0 transition-all duration-200"></span>
         </a>
       </nav>
 
       <!-- Action Button & Mobile Toggle -->
       <div class="flex items-center gap-4">
-        <a href="tel:0584715725" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 text-xs font-semibold tracking-wide uppercase text-white bg-graphite hover:bg-bronze transition-all duration-300 rounded-none shadow-sm hover:shadow-md">
+        <a href="tel:0584715725"
+          class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 text-xs font-semibold tracking-wide uppercase text-white bg-graphite hover:bg-bronze transition-all duration-300 rounded-none shadow-sm hover:shadow-md">
           <i data-lucide="phone" class="w-3.5 h-3.5 text-bronzeLight"></i>
           <span>058-4715725</span>
         </a>
 
         <!-- Mobile Menu Trigger -->
-        <button id="mobile-menu-btn" class="md:hidden p-2 text-graphite hover:text-bronze focus:outline-none" aria-label="תפריט">
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-graphite hover:text-bronze focus:outline-none"
+          aria-label="תפריט">
           <i data-lucide="menu" class="w-6 h-6"></i>
         </button>
       </div>
     </div>
 
     <!-- Mobile Drawer Nav -->
-    <div id="mobile-menu" class="hidden md:hidden border-b border-borderStone bg-canvas/98 backdrop-blur-xl px-6 py-6 transition-all duration-300">
+    <div id="mobile-menu"
+      class="hidden md:hidden border-b border-borderStone bg-canvas/98 backdrop-blur-xl px-6 py-6 transition-all duration-300">
       <div class="flex flex-col space-y-4 text-base font-medium text-graphite">
         <a href="#hero" class="mobile-nav-link py-2 border-b border-borderStone/40 flex items-center justify-between">
           <span>ראשי</span>
           <i data-lucide="chevron-left" class="w-4 h-4 text-bronze"></i>
         </a>
-        <a href="#services" class="mobile-nav-link py-2 border-b border-borderStone/40 flex items-center justify-between">
+        <a href="#services"
+          class="mobile-nav-link py-2 border-b border-borderStone/40 flex items-center justify-between">
           <span>שירותי שרטוט ותכנון</span>
           <i data-lucide="chevron-left" class="w-4 h-4 text-bronze"></i>
         </a>
-        <a href="#transformation" class="mobile-nav-link py-2 border-b border-borderStone/40 flex items-center justify-between">
+        <a href="#transformation"
+          class="mobile-nav-link py-2 border-b border-borderStone/40 flex items-center justify-between">
           <span>מהתוכנית למציאות</span>
           <i data-lucide="chevron-left" class="w-4 h-4 text-bronze"></i>
         </a>
-        <a href="#blueprints" class="mobile-nav-link py-2 border-b border-borderStone/40 flex items-center justify-between">
+        <a href="#blueprints"
+          class="mobile-nav-link py-2 border-b border-borderStone/40 flex items-center justify-between">
           <span>תיק תוכניות ועבודות</span>
           <i data-lucide="chevron-left" class="w-4 h-4 text-bronze"></i>
         </a>
@@ -223,7 +274,8 @@
           <span>צור קשר</span>
           <i data-lucide="chevron-left" class="w-4 h-4 text-bronze"></i>
         </a>
-        <a href="tel:0584715725" class="mt-4 text-center py-3 bg-graphite text-white text-sm font-medium tracking-wide flex items-center justify-center gap-2">
+        <a href="tel:0584715725"
+          class="mt-4 text-center py-3 bg-graphite text-white text-sm font-medium tracking-wide flex items-center justify-center gap-2">
           <i data-lucide="phone" class="w-4 h-4"></i>
           <span>חיוג ישיר: 058-4715725</span>
         </a>
@@ -235,19 +287,15 @@
   <!-- ========================================================= -->
   <!-- 2. HERO SECTION                                           -->
   <!-- ========================================================= -->
-  <section id="hero" class="relative min-h-[92vh] pt-24 pb-16 flex items-center justify-center overflow-hidden border-b border-borderStone">
-    
+  <section id="hero"
+    class="relative min-h-[92vh] pt-24 pb-16 flex items-center justify-center overflow-hidden border-b border-borderStone">
+
     <!-- Background Image with Ken Burns -->
     <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
       <div class="relative w-full h-full">
-        <img 
-          src="1.jpeg" 
-          alt="נחמי בוקשפן - שירותי שרטוט ותכנון אדריכלי" 
+        <img src="1.jpeg" alt="נחמי בוקשפן - שירותי שרטוט ותכנון אדריכלי"
           class="hero-ken-burns w-full h-full object-cover object-center filter brightness-[0.92] contrast-[1.02]"
-          loading="eager"
-          decoding="async"
-          onerror="this.onerror=null; this.src='image_1.jpeg';"
-        />
+          loading="eager" decoding="async" onerror="this.onerror=null; this.src='image_1.jpeg';" />
         <div class="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/80 to-canvas/40 sm:via-canvas/60"></div>
         <div class="absolute inset-0 bg-canvas/30 backdrop-blur-[1.5px]"></div>
       </div>
@@ -255,9 +303,10 @@
 
     <!-- Architectural Content Frame -->
     <div class="relative z-10 max-w-5xl mx-auto px-5 sm:px-8 text-center pt-8 sm:pt-14">
-      
+
       <!-- Sub-badge -->
-      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-borderStone bg-white/70 backdrop-blur-md mb-8 shadow-sm">
+      <div
+        class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-borderStone bg-white/70 backdrop-blur-md mb-8 shadow-sm">
         <span class="w-2 h-2 rounded-full bg-bronze animate-pulse"></span>
         <span class="text-xs font-semibold tracking-wider text-slateMuted uppercase">
           נחמי בוקשפן • הנדסאית אדריכלות ועיצוב פנים
@@ -265,24 +314,28 @@
       </div>
 
       <!-- Main Editorial Headline -->
-      <h1 class="font-display font-medium text-3xl sm:text-5xl md:text-6xl lg:text-[4.2rem] text-graphite tracking-tight leading-[1.18] mb-6">
+      <h1
+        class="font-display font-medium text-3xl sm:text-5xl md:text-6xl lg:text-[4.2rem] text-graphite tracking-tight leading-[1.18] mb-6">
         שרטוט ותכנון אדריכלי <br class="hidden sm:inline" />
-        <span class="font-normal italic text-bronze">בדיוק הנדסי</span> מושלם.
+        <span class="font-normal italic text-bronze">בדיוק </span> מושלם.
       </h1>
 
       <!-- Refined Subtitle -->
       <p class="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-slateMuted font-light leading-relaxed mb-10">
-        שירותי שרטוט פרילנס ברמה הגבוהה ביותר לאדריכלים, מעצבים ומשפחות: שרטוט ותכנון חללים, הפקת סטים מלאים לעבודה ושליטה מלאה ב-AutoCAD & SketchUp.
+        שירותי שרטוט פרילנס ברמה הגבוהה ביותר לאדריכלים, מעצבים ומשפחות: שרטוט ותכנון חללים, הפקת סטים מלאים לעבודה
+        ושליטה מלאה ב-AutoCAD & SketchUp.
       </p>
 
       <!-- Dual CTAs -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5">
-        <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 bg-graphite hover:bg-bronze text-white text-sm font-semibold tracking-wide transition-all duration-300 shadow-md hover:shadow-xl">
+        <a href="#contact"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 bg-graphite hover:bg-bronze text-white text-sm font-semibold tracking-wide transition-all duration-300 shadow-md hover:shadow-xl">
           <span>תיאום פגישה / קבלת הצעת מחיר</span>
           <i data-lucide="arrow-left" class="w-4 h-4"></i>
         </a>
-        
-        <a href="#blueprints" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 border border-borderStone bg-white/80 hover:bg-white text-graphite hover:text-bronze text-sm font-semibold tracking-wide backdrop-blur-sm transition-all duration-300 shadow-sm hover:shadow-md">
+
+        <a href="#blueprints"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 border border-borderStone bg-white/80 hover:bg-white text-graphite hover:text-bronze text-sm font-semibold tracking-wide backdrop-blur-sm transition-all duration-300 shadow-sm hover:shadow-md">
           <i data-lucide="file-text" class="w-4 h-4 text-bronze"></i>
           <span>עיון בתוכניות העבודה (PDF)</span>
         </a>
@@ -290,7 +343,8 @@
 
       <!-- Subtle Scroll Down Indicator -->
       <div class="mt-14 sm:mt-20 flex justify-center">
-        <a href="#services" class="group inline-flex flex-col items-center gap-2 text-xs font-light tracking-widest text-slateMuted hover:text-bronze transition-colors">
+        <a href="#services"
+          class="group inline-flex flex-col items-center gap-2 text-xs font-light tracking-widest text-slateMuted hover:text-bronze transition-colors">
           <span>גלילה לשירותים</span>
           <div class="w-5 h-9 rounded-full border border-borderStone flex items-start justify-center p-1">
             <div class="w-1 h-2 rounded-full bg-bronze animate-bounce"></div>
@@ -305,9 +359,10 @@
   <!-- ========================================================= -->
   <!-- 3. SERVICES (שירותי הסטודיו המדויקים)                      -->
   <!-- ========================================================= -->
-  <section id="services" class="py-24 sm:py-32 bg-stoneSurface/50 border-b border-borderStone blueprint-pattern relative">
+  <section id="services"
+    class="py-24 sm:py-32 bg-stoneSurface/50 border-b border-borderStone blueprint-pattern relative">
     <div class="max-w-6xl mx-auto px-5 sm:px-8">
-      
+
       <!-- Section Label -->
       <div class="flex items-center justify-center gap-3 mb-6">
         <span class="h-px w-10 bg-bronze"></span>
@@ -326,58 +381,76 @@
 
       <!-- 3 Services Grid -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
+
         <!-- Service 1 -->
-        <div class="bg-canvas border border-borderStone p-8 sm:p-10 relative group hover:border-bronze hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+        <div
+          class="bg-canvas border border-borderStone p-8 sm:p-10 relative group hover:border-bronze hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
           <div>
-            <div class="w-12 h-12 mb-6 bg-stoneSurface border border-borderStone flex items-center justify-center text-bronze group-hover:bg-bronze group-hover:text-white transition-colors">
+            <div
+              class="w-12 h-12 mb-6 bg-stoneSurface border border-borderStone flex items-center justify-center text-bronze group-hover:bg-bronze group-hover:text-white transition-colors">
               <i data-lucide="compass" class="w-6 h-6"></i>
             </div>
-            <span class="text-xs font-mono font-medium text-bronze tracking-wider block mb-2">01 / DRAFTING & PLANNING</span>
+            <span class="text-xs font-mono font-medium text-bronze tracking-wider block mb-2">01 / DRAFTING &
+              PLANNING</span>
             <h3 class="font-display font-medium text-xl text-graphite mb-3">1. שרטוט ותכנון אדריכלי</h3>
             <p class="text-sm text-slateMuted font-light leading-relaxed mb-6">
-              תכנון חללים מדויק, תוכניות העמדה וחלוקה פנימית, היתרי בנייה והסבה מקצועית של רעיונות וסקיצות לקובצי CAD ו-SketchUp מוקפדים.
+              תכנון חללים מדויק, תוכניות העמדה וחלוקה פנימית, היתרי בנייה והסבה מקצועית של רעיונות וסקיצות לקובצי CAD
+              ו-SketchUp מוקפדים.
             </p>
           </div>
           <ul class="text-xs text-slateMuted space-y-2 pt-4 border-t border-borderStone/60 font-light">
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-bronze"></i> תכנון חללים ארגונומי</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-bronze"></i> תוכניות להיתרי בנייה</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-bronze"></i> תכנון חללים
+              ארגונומי</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-bronze"></i> תוכניות
+              להיתרי בנייה</li>
           </ul>
         </div>
 
         <!-- Service 2 -->
-        <div class="bg-canvas border border-borderStone p-8 sm:p-10 relative group hover:border-bronze hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+        <div
+          class="bg-canvas border border-borderStone p-8 sm:p-10 relative group hover:border-bronze hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
           <div>
-            <div class="w-12 h-12 mb-6 bg-stoneSurface border border-borderStone flex items-center justify-center text-bronze group-hover:bg-bronze group-hover:text-white transition-colors">
+            <div
+              class="w-12 h-12 mb-6 bg-stoneSurface border border-borderStone flex items-center justify-center text-bronze group-hover:bg-bronze group-hover:text-white transition-colors">
               <i data-lucide="layers" class="w-6 h-6"></i>
             </div>
-            <span class="text-xs font-mono font-medium text-bronze tracking-wider block mb-2">02 / FULL BLUEPRINT SET</span>
+            <span class="text-xs font-mono font-medium text-bronze tracking-wider block mb-2">02 / FULL BLUEPRINT
+              SET</span>
             <h3 class="font-display font-medium text-xl text-graphite mb-3">2. הפקת סט תכניות מלא לעבודה</h3>
             <p class="text-sm text-slateMuted font-light leading-relaxed mb-6">
-              הפקת סטים מקיפים ומפורטים לביצוע בשטח: תוכניות הריסה ובנייה, מערכי חשמל ותאורה, אינסטלציה, פריסות ריצוף, תקרות ונגרויות בהתאמה אישית.
+              הפקת סטים מקיפים ומפורטים לביצוע בשטח: תוכניות הריסה ובנייה, מערכי חשמל ותאורה, אינסטלציה, פריסות ריצוף,
+              תקרות ונגרויות בהתאמה אישית.
             </p>
           </div>
           <ul class="text-xs text-slateMuted space-y-2 pt-4 border-t border-borderStone/60 font-light">
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-bronze"></i> פריסות רטובים וחיפויים</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-bronze"></i> סטים מפורטים לנגרות אומן</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-bronze"></i> פריסות
+              רטובים וחיפויים</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-bronze"></i> סטים מפורטים
+              לנגרות אומן</li>
           </ul>
         </div>
 
         <!-- Service 3 -->
-        <div class="bg-canvas border border-borderStone p-8 sm:p-10 relative group hover:border-bronze hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+        <div
+          class="bg-canvas border border-borderStone p-8 sm:p-10 relative group hover:border-bronze hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
           <div>
-            <div class="w-12 h-12 mb-6 bg-stoneSurface border border-borderStone flex items-center justify-center text-bronze group-hover:bg-bronze group-hover:text-white transition-colors">
+            <div
+              class="w-12 h-12 mb-6 bg-stoneSurface border border-borderStone flex items-center justify-center text-bronze group-hover:bg-bronze group-hover:text-white transition-colors">
               <i data-lucide="users" class="w-6 h-6"></i>
             </div>
-            <span class="text-xs font-mono font-medium text-bronze tracking-wider block mb-2">03 / TENANT COORDINATION</span>
+            <span class="text-xs font-mono font-medium text-bronze tracking-wider block mb-2">03 / TENANT
+              COORDINATION</span>
             <h3 class="font-display font-medium text-xl text-graphite mb-3">3. ליווי משפחות בשינויי דיירים</h3>
             <p class="text-sm text-slateMuted font-light leading-relaxed mb-6">
-              ליווי אישי מקיף מול חברות הבנייה והקבלנים: התאמת דירת הקבלן לצורכי המשפחה, הגשת תוכניות בלוחות הזמנים הנדרשים ומניעת עלויות מיותרות.
+              ליווי אישי מקיף מול חברות הבנייה והקבלנים: התאמת דירת הקבלן לצורכי המשפחה, הגשת תוכניות בלוחות הזמנים
+              הנדרשים ומניעת עלויות מיותרות.
             </p>
           </div>
           <ul class="text-xs text-slateMuted space-y-2 pt-4 border-t border-borderStone/60 font-light">
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-bronze"></i> סנכרון מלא מול מחלקת הדיירים</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-bronze"></i> דיוק מירבי במיקומי נקודות ומערכות</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-bronze"></i> סנכרון מלא
+              מול מחלקת הדיירים</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-bronze"></i> דיוק מירבי
+              במיקומי נקודות ומערכות</li>
           </ul>
         </div>
 
@@ -392,7 +465,7 @@
   <!-- ========================================================= -->
   <section id="transformation" class="py-24 sm:py-32 bg-canvas border-b border-borderStone">
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
-      
+
       <!-- Section Header -->
       <div class="max-w-2xl mx-auto text-center mb-16 sm:mb-20">
         <div class="inline-flex items-center gap-2 text-xs uppercase font-semibold tracking-widest text-bronze mb-3">
@@ -403,7 +476,8 @@
           מהתוכנית למציאות
         </h2>
         <p class="text-sm sm:text-base text-slateMuted font-light">
-          כל קו שמשורטט בתוכנית הופך למרחב מדויק בשטח. <strong class="font-medium text-graphite">העבירו עכבר</strong> או <strong class="font-medium text-graphite">לחצו על הכרטיס</strong> כדי להפוך מהשרטוט לתוצאה המוגמרת.
+          כל קו שמשורטט בתוכנית הופך למרחב מדויק בשטח. <strong class="font-medium text-graphite">העבירו עכבר</strong> או
+          <strong class="font-medium text-graphite">לחצו על הכרטיס</strong> כדי להפוך מהשרטוט לתוצאה המוגמרת.
         </p>
       </div>
 
@@ -412,38 +486,34 @@
 
         <!-- CARD 1: a2 (שרטוט בחזית) -> a1 (ביצוע מאחור) -->
         <div class="flip-card-container group perspective-1200 h-[500px] sm:h-[530px] cursor-pointer" data-card-id="1">
-          <div class="flip-card-inner relative w-full h-full transform-style-3d shadow-md hover:shadow-2xl transition-all duration-700 border border-borderStone">
-            
+          <div
+            class="flip-card-inner relative w-full h-full transform-style-3d shadow-md hover:shadow-2xl transition-all duration-700 border border-borderStone">
+
             <!-- FRONT: השרטוט האדריכלי (a2.jpeg) -->
-            <div class="absolute inset-0 w-full h-full backface-hidden bg-[#1E252B] flex flex-col justify-between overflow-hidden">
+            <div
+              class="absolute inset-0 w-full h-full backface-hidden bg-[#1E252B] flex flex-col justify-between overflow-hidden">
               <div class="relative w-full h-full flex items-center justify-center p-3 bg-[#11161B]">
-                <img 
-                  src="a2.jpeg" 
-                  alt="תוכנית עבודה אדריכלית" 
-                  class="w-full h-full object-contain filter contrast-125"
-                  loading="lazy"
-                  decoding="async"
-                  onerror="this.onerror=null; this.src='a2.jpg';"
-                />
-                
+                <img src="a2.jpeg" alt="תוכנית עבודה אדריכלית" class="w-full h-full object-contain filter contrast-125"
+                  loading="lazy" decoding="async" onerror="this.onerror=null; this.src='a2.jpg';" />
+
                 <!-- Pill Tag: תוכנית עבודה -->
-                <div class="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 bg-graphite/90 text-white text-[11px] font-mono tracking-wider backdrop-blur-sm border border-white/20">
+                <div
+                  class="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 bg-graphite/90 text-white text-[11px] font-mono tracking-wider backdrop-blur-sm border border-white/20">
                   <i data-lucide="file-code-2" class="w-3.5 h-3.5 text-bronze"></i>
                   <span>תוכנית עבודה אדריכלית</span>
                 </div>
 
                 <!-- Lightbox Zoom -->
-                <button 
+                <button
                   onclick="event.stopPropagation(); openLightbox('a2.jpeg', 'שרטוט אדריכלי מפורט', 'שרטוט מדויק ב-AutoCAD, תוכנית העמדה ומידות ביצוע')"
                   class="absolute top-4 left-4 p-2 bg-graphite/80 hover:bg-bronze text-white rounded-none border border-white/20 transition-colors shadow-sm"
-                  title="בחינת שרטוט בהגדלה"
-                  aria-label="בחינת שרטוט בהגדלה"
-                >
+                  title="בחינת שרטוט בהגדלה" aria-label="בחינת שרטוט בהגדלה">
                   <i data-lucide="zoom-in" class="w-4 h-4"></i>
                 </button>
 
                 <!-- Hint to Flip -->
-                <div class="absolute bottom-4 inset-x-4 flex items-center justify-between text-xs text-stone-300 font-light px-3 py-1.5 bg-black/60 backdrop-blur-sm border border-white/10">
+                <div
+                  class="absolute bottom-4 inset-x-4 flex items-center justify-between text-xs text-stone-300 font-light px-3 py-1.5 bg-black/60 backdrop-blur-sm border border-white/10">
                   <span class="flex items-center gap-1">
                     <i data-lucide="repeat" class="w-3 h-3 text-bronze"></i>
                     <span>הפוך לצפייה בביצוע בשטח</span>
@@ -459,35 +529,31 @@
             </div>
 
             <!-- BACK: הביצוע בשטח (a1.jpeg) -->
-            <div class="absolute inset-0 w-full h-full backface-hidden rotate-y-180 bg-stoneSurface flex flex-col justify-between overflow-hidden">
+            <div
+              class="absolute inset-0 w-full h-full backface-hidden rotate-y-180 bg-stoneSurface flex flex-col justify-between overflow-hidden">
               <div class="relative w-full h-full overflow-hidden bg-stone-900">
-                <img 
-                  src="a1.jpeg" 
-                  alt="הביצוע בשטח" 
+                <img src="a1.jpeg" alt="הביצוע בשטח"
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                  decoding="async"
-                  onerror="this.onerror=null; this.src='a1.jpg';"
-                />
-                
+                  loading="lazy" decoding="async" onerror="this.onerror=null; this.src='a1.jpg';" />
+
                 <!-- Pill Tag: הביצוע בשטח -->
-                <div class="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 bg-bronze text-white text-[11px] font-medium tracking-wider backdrop-blur-sm shadow-sm">
+                <div
+                  class="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 bg-bronze text-white text-[11px] font-medium tracking-wider backdrop-blur-sm shadow-sm">
                   <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
                   <span>הביצוע בשטח</span>
                 </div>
 
                 <!-- Lightbox Zoom -->
-                <button 
+                <button
                   onclick="event.stopPropagation(); openLightbox('a1.jpeg', 'הביצוע בשטח', 'המרחב הבנוי המוגמר על פי תוכנית השרטוט')"
                   class="absolute top-4 left-4 p-2 bg-graphite/80 hover:bg-bronze text-white rounded-none border border-white/20 transition-colors shadow-sm"
-                  title="צפייה בתמונה מלאה"
-                  aria-label="צפייה בתמונה מלאה"
-                >
+                  title="צפייה בתמונה מלאה" aria-label="צפייה בתמונה מלאה">
                   <i data-lucide="zoom-in" class="w-4 h-4"></i>
                 </button>
 
                 <!-- Return Flip Hint -->
-                <div class="absolute bottom-4 inset-x-4 flex items-center justify-between text-xs text-white font-light px-3 py-1.5 bg-black/60 backdrop-blur-sm border border-white/10">
+                <div
+                  class="absolute bottom-4 inset-x-4 flex items-center justify-between text-xs text-white font-light px-3 py-1.5 bg-black/60 backdrop-blur-sm border border-white/10">
                   <span class="flex items-center gap-1">
                     <i data-lucide="rotate-ccw" class="w-3 h-3 text-bronze"></i>
                     <span>הפוך חזרה לתוכנית</span>
@@ -507,35 +573,32 @@
 
         <!-- CARD 2: b2 (שרטוט בחזית) -> b1 (ביצוע מאחור) -->
         <div class="flip-card-container group perspective-1200 h-[500px] sm:h-[530px] cursor-pointer" data-card-id="2">
-          <div class="flip-card-inner relative w-full h-full transform-style-3d shadow-md hover:shadow-2xl transition-all duration-700 border border-borderStone">
-            
+          <div
+            class="flip-card-inner relative w-full h-full transform-style-3d shadow-md hover:shadow-2xl transition-all duration-700 border border-borderStone">
+
             <!-- FRONT: השרטוט האדריכלי (b2.jpeg) -->
-            <div class="absolute inset-0 w-full h-full backface-hidden bg-[#1E252B] flex flex-col justify-between overflow-hidden">
+            <div
+              class="absolute inset-0 w-full h-full backface-hidden bg-[#1E252B] flex flex-col justify-between overflow-hidden">
               <div class="relative w-full h-full flex items-center justify-center p-3 bg-[#11161B]">
-                <img 
-                  src="b2.jpeg" 
-                  alt="תוכנית פריסות וחללים רטובים" 
-                  class="w-full h-full object-contain filter contrast-125"
-                  loading="lazy"
-                  decoding="async"
-                  onerror="this.onerror=null; this.src='b2.jpg';"
-                />
-                
-                <div class="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 bg-graphite/90 text-white text-[11px] font-mono tracking-wider backdrop-blur-sm border border-white/20">
+                <img src="b2.jpeg" alt="תוכנית פריסות וחללים רטובים"
+                  class="w-full h-full object-contain filter contrast-125" loading="lazy" decoding="async"
+                  onerror="this.onerror=null; this.src='b2.jpg';" />
+
+                <div
+                  class="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 bg-graphite/90 text-white text-[11px] font-mono tracking-wider backdrop-blur-sm border border-white/20">
                   <i data-lucide="file-code-2" class="w-3.5 h-3.5 text-bronze"></i>
                   <span>תוכנית עבודה אדריכלית</span>
                 </div>
 
-                <button 
+                <button
                   onclick="event.stopPropagation(); openLightbox('b2.jpeg', 'פריסת חללים רטובים ואינסטלציה', 'תכנון פונקציונלי של חדר רחצה, גבהים ומיקומי כלים סניטריים')"
                   class="absolute top-4 left-4 p-2 bg-graphite/80 hover:bg-bronze text-white rounded-none border border-white/20 transition-colors shadow-sm"
-                  title="בחינת שרטוט בהגדלה"
-                  aria-label="בחינת שרטוט בהגדלה"
-                >
+                  title="בחינת שרטוט בהגדלה" aria-label="בחינת שרטוט בהגדלה">
                   <i data-lucide="zoom-in" class="w-4 h-4"></i>
                 </button>
 
-                <div class="absolute bottom-4 inset-x-4 flex items-center justify-between text-xs text-stone-300 font-light px-3 py-1.5 bg-black/60 backdrop-blur-sm border border-white/10">
+                <div
+                  class="absolute bottom-4 inset-x-4 flex items-center justify-between text-xs text-stone-300 font-light px-3 py-1.5 bg-black/60 backdrop-blur-sm border border-white/10">
                   <span class="flex items-center gap-1">
                     <i data-lucide="repeat" class="w-3 h-3 text-bronze"></i>
                     <span>הפוך לצפייה בביצוע בשטח</span>
@@ -551,32 +614,28 @@
             </div>
 
             <!-- BACK: הביצוע בשטח (b1.jpeg) -->
-            <div class="absolute inset-0 w-full h-full backface-hidden rotate-y-180 bg-stoneSurface flex flex-col justify-between overflow-hidden">
+            <div
+              class="absolute inset-0 w-full h-full backface-hidden rotate-y-180 bg-stoneSurface flex flex-col justify-between overflow-hidden">
               <div class="relative w-full h-full overflow-hidden bg-stone-900">
-                <img 
-                  src="b1.jpeg" 
-                  alt="הביצוע בשטח - סוויטה" 
+                <img src="b1.jpeg" alt="הביצוע בשטח - סוויטה"
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                  decoding="async"
-                  onerror="this.onerror=null; this.src='b1.jpg';"
-                />
-                
-                <div class="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 bg-bronze text-white text-[11px] font-medium tracking-wider backdrop-blur-sm shadow-sm">
+                  loading="lazy" decoding="async" onerror="this.onerror=null; this.src='b1.jpg';" />
+
+                <div
+                  class="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 bg-bronze text-white text-[11px] font-medium tracking-wider backdrop-blur-sm shadow-sm">
                   <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
                   <span>הביצוע בשטח</span>
                 </div>
 
-                <button 
+                <button
                   onclick="event.stopPropagation(); openLightbox('b1.jpeg', 'הביצוע בשטח - חדר רחצה וסוויטה', 'התאמה מלאה לתוכניות העבודה, גמר נקי וחיפויים')"
                   class="absolute top-4 left-4 p-2 bg-graphite/80 hover:bg-bronze text-white rounded-none border border-white/20 transition-colors shadow-sm"
-                  title="צפייה בתמונה מלאה"
-                  aria-label="צפייה בתמונה מלאה"
-                >
+                  title="צפייה בתמונה מלאה" aria-label="צפייה בתמונה מלאה">
                   <i data-lucide="zoom-in" class="w-4 h-4"></i>
                 </button>
 
-                <div class="absolute bottom-4 inset-x-4 flex items-center justify-between text-xs text-white font-light px-3 py-1.5 bg-black/60 backdrop-blur-sm border border-white/10">
+                <div
+                  class="absolute bottom-4 inset-x-4 flex items-center justify-between text-xs text-white font-light px-3 py-1.5 bg-black/60 backdrop-blur-sm border border-white/10">
                   <span class="flex items-center gap-1">
                     <i data-lucide="rotate-ccw" class="w-3 h-3 text-bronze"></i>
                     <span>הפוך חזרה לתוכנית</span>
@@ -596,35 +655,31 @@
 
         <!-- CARD 3: c2 (שרטוט בחזית) -> c1 (ביצוע מאחור) -->
         <div class="flip-card-container group perspective-1200 h-[500px] sm:h-[530px] cursor-pointer" data-card-id="3">
-          <div class="flip-card-inner relative w-full h-full transform-style-3d shadow-md hover:shadow-2xl transition-all duration-700 border border-borderStone">
-            
+          <div
+            class="flip-card-inner relative w-full h-full transform-style-3d shadow-md hover:shadow-2xl transition-all duration-700 border border-borderStone">
+
             <!-- FRONT: השרטוט האדריכלי (c2.jpeg) -->
-            <div class="absolute inset-0 w-full h-full backface-hidden bg-[#1E252B] flex flex-col justify-between overflow-hidden">
+            <div
+              class="absolute inset-0 w-full h-full backface-hidden bg-[#1E252B] flex flex-col justify-between overflow-hidden">
               <div class="relative w-full h-full flex items-center justify-center p-3 bg-[#11161B]">
-                <img 
-                  src="c2.jpeg" 
-                  alt="תוכנית נגרות ורחצה" 
-                  class="w-full h-full object-contain filter contrast-125"
-                  loading="lazy"
-                  decoding="async"
-                  onerror="this.onerror=null; this.src='c2.jpg';"
-                />
-                
-                <div class="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 bg-graphite/90 text-white text-[11px] font-mono tracking-wider backdrop-blur-sm border border-white/20">
+                <img src="c2.jpeg" alt="תוכנית נגרות ורחצה" class="w-full h-full object-contain filter contrast-125"
+                  loading="lazy" decoding="async" onerror="this.onerror=null; this.src='c2.jpg';" />
+
+                <div
+                  class="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 bg-graphite/90 text-white text-[11px] font-mono tracking-wider backdrop-blur-sm border border-white/20">
                   <i data-lucide="file-code-2" class="w-3.5 h-3.5 text-bronze"></i>
                   <span>תוכנית עבודה אדריכלית</span>
                 </div>
 
-                <button 
+                <button
                   onclick="event.stopPropagation(); openLightbox('c2.jpeg', 'שרטוט נגרות וחיפויים', 'תכנון ארון רחצה, פריסה ומידות מדויקות')"
                   class="absolute top-4 left-4 p-2 bg-graphite/80 hover:bg-bronze text-white rounded-none border border-white/20 transition-colors shadow-sm"
-                  title="בחינת שרטוט בהגדלה"
-                  aria-label="בחינת שרטוט בהגדלה"
-                >
+                  title="בחינת שרטוט בהגדלה" aria-label="בחינת שרטוט בהגדלה">
                   <i data-lucide="zoom-in" class="w-4 h-4"></i>
                 </button>
 
-                <div class="absolute bottom-4 inset-x-4 flex items-center justify-between text-xs text-stone-300 font-light px-3 py-1.5 bg-black/60 backdrop-blur-sm border border-white/10">
+                <div
+                  class="absolute bottom-4 inset-x-4 flex items-center justify-between text-xs text-stone-300 font-light px-3 py-1.5 bg-black/60 backdrop-blur-sm border border-white/10">
                   <span class="flex items-center gap-1">
                     <i data-lucide="repeat" class="w-3 h-3 text-bronze"></i>
                     <span>הפוך לצפייה בביצוע בשטח</span>
@@ -640,32 +695,28 @@
             </div>
 
             <!-- BACK: הביצוע בשטח (c1.jpeg) -->
-            <div class="absolute inset-0 w-full h-full backface-hidden rotate-y-180 bg-stoneSurface flex flex-col justify-between overflow-hidden">
+            <div
+              class="absolute inset-0 w-full h-full backface-hidden rotate-y-180 bg-stoneSurface flex flex-col justify-between overflow-hidden">
               <div class="relative w-full h-full overflow-hidden bg-stone-900">
-                <img 
-                  src="c1.jpeg" 
-                  alt="הביצוע בשטח - חדר רחצה" 
+                <img src="c1.jpeg" alt="הביצוע בשטח - חדר רחצה"
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                  decoding="async"
-                  onerror="this.onerror=null; this.src='c1.jpg';"
-                />
-                
-                <div class="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 bg-bronze text-white text-[11px] font-medium tracking-wider backdrop-blur-sm shadow-sm">
+                  loading="lazy" decoding="async" onerror="this.onerror=null; this.src='c1.jpg';" />
+
+                <div
+                  class="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 bg-bronze text-white text-[11px] font-medium tracking-wider backdrop-blur-sm shadow-sm">
                   <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
                   <span>הביצוע בשטח</span>
                 </div>
 
-                <button 
+                <button
                   onclick="event.stopPropagation(); openLightbox('c1.jpeg', 'הביצוע בשטח - חדר רחצה מעוצב', 'הגשמת תוכנית הנגרות והחיפוי בפועל')"
                   class="absolute top-4 left-4 p-2 bg-graphite/80 hover:bg-bronze text-white rounded-none border border-white/20 transition-colors shadow-sm"
-                  title="צפייה בתמונה מלאה"
-                  aria-label="צפייה בתמונה מלאה"
-                >
+                  title="צפייה בתמונה מלאה" aria-label="צפייה בתמונה מלאה">
                   <i data-lucide="zoom-in" class="w-4 h-4"></i>
                 </button>
 
-                <div class="absolute bottom-4 inset-x-4 flex items-center justify-between text-xs text-white font-light px-3 py-1.5 bg-black/60 backdrop-blur-sm border border-white/10">
+                <div
+                  class="absolute bottom-4 inset-x-4 flex items-center justify-between text-xs text-white font-light px-3 py-1.5 bg-black/60 backdrop-blur-sm border border-white/10">
                   <span class="flex items-center gap-1">
                     <i data-lucide="rotate-ccw" class="w-3 h-3 text-bronze"></i>
                     <span>הפוך חזרה לתוכנית</span>
@@ -694,7 +745,7 @@
   <!-- ========================================================= -->
   <section id="blueprints" class="py-24 sm:py-32 bg-stoneSurface/60 border-b border-borderStone blueprint-pattern">
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
-      
+
       <!-- Section Header -->
       <div class="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
         <div class="inline-flex items-center gap-2 text-xs uppercase font-semibold tracking-widest text-bronze mb-3">
@@ -705,21 +756,24 @@
           ספרי תוכניות וסטים לביצוע
         </h2>
         <p class="text-sm sm:text-base text-slateMuted font-light">
-          דוגמאות מתוך סטים מקיפים שהופקו עבור משרדי אדריכלות, מעצבים וקבלנים. כולל שרטוטי AutoCAD מלאים לפריסות, נגרויות ותוכניות שינויי דיירים.
+          דוגמאות מתוך סטים מקיפים שהופקו עבור משרדי אדריכלות, מעצבים וקבלנים. כולל שרטוטי AutoCAD מלאים לפריסות,
+          נגרויות ותוכניות שינויי דיירים.
         </p>
       </div>
 
       <!-- 4 PDF Showcase Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        
+
         <!-- PDF Card 1: סטאחי -->
-        <div class="bg-canvas border border-borderStone hover:border-bronze transition-all duration-300 p-6 flex flex-col justify-between shadow-sm hover:shadow-lg relative group">
+        <div
+          class="bg-canvas border border-borderStone hover:border-bronze transition-all duration-300 p-6 flex flex-col justify-between shadow-sm hover:shadow-lg relative group">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="px-2 py-0.5 bg-stoneSurface border border-borderStone text-[10px] font-mono text-slateMuted">
                 סט תכניות עבודה
               </span>
-              <div class="w-9 h-9 rounded-full bg-bronze/10 text-bronze flex items-center justify-center group-hover:scale-110 transition-transform">
+              <div
+                class="w-9 h-9 rounded-full bg-bronze/10 text-bronze flex items-center justify-center group-hover:scale-110 transition-transform">
                 <i data-lucide="file-text" class="w-4 h-4"></i>
               </div>
             </div>
@@ -731,28 +785,22 @@
             </p>
 
             <!-- Credit Pill -->
-            <div class="p-2.5 bg-stoneSurface/60 border border-borderStone text-[11px] text-graphite font-light mb-6 space-y-0.5">
+            <div
+              class="p-2.5 bg-stoneSurface/60 border border-borderStone text-[11px] text-graphite font-light mb-6 space-y-0.5">
               <div><strong class="font-medium text-slateMuted">תכנון ועיצוב:</strong> מיה כהן</div>
               <div><strong class="font-medium text-slateMuted">שרטוט ותוכניות:</strong> נחמי בוקשפן</div>
             </div>
           </div>
 
           <div class="pt-4 border-t border-borderStone/80 space-y-2">
-            <a 
-              href="prot/סטאחי-סט תכניות עבודה.pdf" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              class="w-full inline-flex items-center justify-center gap-2 py-2.5 bg-graphite hover:bg-bronze text-white text-xs font-semibold tracking-wide transition-colors"
-            >
+            <a href="prot/סטאחי-סט תכניות עבודה.pdf" target="_blank" rel="noopener noreferrer"
+              class="w-full inline-flex items-center justify-center gap-2 py-2.5 bg-graphite hover:bg-bronze text-white text-xs font-semibold tracking-wide transition-colors">
               <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
               <span>צפייה בתוכנית (PDF)</span>
             </a>
-            
-            <a 
-              href="prot/סטאחי-סט תכניות עבודה.pdf" 
-              download 
-              class="w-full inline-flex items-center justify-center gap-2 py-2 border border-borderStone hover:border-graphite text-graphite text-[11px] font-medium tracking-wide transition-colors"
-            >
+
+            <a href="prot/סטאחי-סט תכניות עבודה.pdf" download
+              class="w-full inline-flex items-center justify-center gap-2 py-2 border border-borderStone hover:border-graphite text-graphite text-[11px] font-medium tracking-wide transition-colors">
               <i data-lucide="download" class="w-3.5 h-3.5 text-slateMuted"></i>
               <span>הורדת קובץ</span>
             </a>
@@ -760,13 +808,15 @@
         </div>
 
         <!-- PDF Card 2: אלפי מנשה -->
-        <div class="bg-canvas border border-borderStone hover:border-bronze transition-all duration-300 p-6 flex flex-col justify-between shadow-sm hover:shadow-lg relative group">
+        <div
+          class="bg-canvas border border-borderStone hover:border-bronze transition-all duration-300 p-6 flex flex-col justify-between shadow-sm hover:shadow-lg relative group">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="px-2 py-0.5 bg-stoneSurface border border-borderStone text-[10px] font-mono text-slateMuted">
                 סט פריסות מלא
               </span>
-              <div class="w-9 h-9 rounded-full bg-bronze/10 text-bronze flex items-center justify-center group-hover:scale-110 transition-transform">
+              <div
+                class="w-9 h-9 rounded-full bg-bronze/10 text-bronze flex items-center justify-center group-hover:scale-110 transition-transform">
                 <i data-lucide="file-text" class="w-4 h-4"></i>
               </div>
             </div>
@@ -778,28 +828,22 @@
             </p>
 
             <!-- Credit Pill -->
-            <div class="p-2.5 bg-stoneSurface/60 border border-borderStone text-[11px] text-graphite font-light mb-6 space-y-0.5">
+            <div
+              class="p-2.5 bg-stoneSurface/60 border border-borderStone text-[11px] text-graphite font-light mb-6 space-y-0.5">
               <div><strong class="font-medium text-slateMuted">תכנון ועיצוב:</strong> רותי קולסקי</div>
               <div><strong class="font-medium text-slateMuted">שרטוט ותוכניות:</strong> נחמי בוקשפן</div>
             </div>
           </div>
 
           <div class="pt-4 border-t border-borderStone/80 space-y-2">
-            <a 
-              href="prot/אלפי מנשה-סט פריסות.pdf" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              class="w-full inline-flex items-center justify-center gap-2 py-2.5 bg-graphite hover:bg-bronze text-white text-xs font-semibold tracking-wide transition-colors"
-            >
+            <a href="prot/אלפי מנשה-סט פריסות.pdf" target="_blank" rel="noopener noreferrer"
+              class="w-full inline-flex items-center justify-center gap-2 py-2.5 bg-graphite hover:bg-bronze text-white text-xs font-semibold tracking-wide transition-colors">
               <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
               <span>צפייה בתוכנית (PDF)</span>
             </a>
-            
-            <a 
-              href="prot/אלפי מנשה-סט פריסות.pdf" 
-              download 
-              class="w-full inline-flex items-center justify-center gap-2 py-2 border border-borderStone hover:border-graphite text-graphite text-[11px] font-medium tracking-wide transition-colors"
-            >
+
+            <a href="prot/אלפי מנשה-סט פריסות.pdf" download
+              class="w-full inline-flex items-center justify-center gap-2 py-2 border border-borderStone hover:border-graphite text-graphite text-[11px] font-medium tracking-wide transition-colors">
               <i data-lucide="download" class="w-3.5 h-3.5 text-slateMuted"></i>
               <span>הורדת קובץ</span>
             </a>
@@ -807,13 +851,15 @@
         </div>
 
         <!-- PDF Card 3: גומלסקי -->
-        <div class="bg-canvas border border-borderStone hover:border-bronze transition-all duration-300 p-6 flex flex-col justify-between shadow-sm hover:shadow-lg relative group">
+        <div
+          class="bg-canvas border border-borderStone hover:border-bronze transition-all duration-300 p-6 flex flex-col justify-between shadow-sm hover:shadow-lg relative group">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="px-2 py-0.5 bg-stoneSurface border border-borderStone text-[10px] font-mono text-slateMuted">
                 סט נגרויות מותאם
               </span>
-              <div class="w-9 h-9 rounded-full bg-bronze/10 text-bronze flex items-center justify-center group-hover:scale-110 transition-transform">
+              <div
+                class="w-9 h-9 rounded-full bg-bronze/10 text-bronze flex items-center justify-center group-hover:scale-110 transition-transform">
                 <i data-lucide="file-text" class="w-4 h-4"></i>
               </div>
             </div>
@@ -825,28 +871,22 @@
             </p>
 
             <!-- Credit Pill -->
-            <div class="p-2.5 bg-stoneSurface/60 border border-borderStone text-[11px] text-graphite font-light mb-6 space-y-0.5">
+            <div
+              class="p-2.5 bg-stoneSurface/60 border border-borderStone text-[11px] text-graphite font-light mb-6 space-y-0.5">
               <div><strong class="font-medium text-slateMuted">תכנון ועיצוב:</strong> רותי קולסקי</div>
               <div><strong class="font-medium text-slateMuted">שרטוט ותוכניות:</strong> נחמי בוקשפן</div>
             </div>
           </div>
 
           <div class="pt-4 border-t border-borderStone/80 space-y-2">
-            <a 
-              href="prot/גומלסקי-סט נגרויות.pdf" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              class="w-full inline-flex items-center justify-center gap-2 py-2.5 bg-graphite hover:bg-bronze text-white text-xs font-semibold tracking-wide transition-colors"
-            >
+            <a href="prot/גומלסקי-סט נגרויות.pdf" target="_blank" rel="noopener noreferrer"
+              class="w-full inline-flex items-center justify-center gap-2 py-2.5 bg-graphite hover:bg-bronze text-white text-xs font-semibold tracking-wide transition-colors">
               <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
               <span>צפייה בתוכנית (PDF)</span>
             </a>
-            
-            <a 
-              href="prot/גומלסקי-סט נגרויות.pdf" 
-              download 
-              class="w-full inline-flex items-center justify-center gap-2 py-2 border border-borderStone hover:border-graphite text-graphite text-[11px] font-medium tracking-wide transition-colors"
-            >
+
+            <a href="prot/גומלסקי-סט נגרויות.pdf" download
+              class="w-full inline-flex items-center justify-center gap-2 py-2 border border-borderStone hover:border-graphite text-graphite text-[11px] font-medium tracking-wide transition-colors">
               <i data-lucide="download" class="w-3.5 h-3.5 text-slateMuted"></i>
               <span>הורדת קובץ</span>
             </a>
@@ -854,13 +894,15 @@
         </div>
 
         <!-- PDF Card 4: פוגל -->
-        <div class="bg-canvas border border-borderStone hover:border-bronze transition-all duration-300 p-6 flex flex-col justify-between shadow-sm hover:shadow-lg relative group">
+        <div
+          class="bg-canvas border border-borderStone hover:border-bronze transition-all duration-300 p-6 flex flex-col justify-between shadow-sm hover:shadow-lg relative group">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="px-2 py-0.5 bg-stoneSurface border border-borderStone text-[10px] font-mono text-slateMuted">
                 שינויי דיירים
               </span>
-              <div class="w-9 h-9 rounded-full bg-bronze/10 text-bronze flex items-center justify-center group-hover:scale-110 transition-transform">
+              <div
+                class="w-9 h-9 rounded-full bg-bronze/10 text-bronze flex items-center justify-center group-hover:scale-110 transition-transform">
                 <i data-lucide="file-text" class="w-4 h-4"></i>
               </div>
             </div>
@@ -872,28 +914,22 @@
             </p>
 
             <!-- Credit Pill -->
-            <div class="p-2.5 bg-stoneSurface/60 border border-borderStone text-[11px] text-graphite font-light mb-6 space-y-0.5">
+            <div
+              class="p-2.5 bg-stoneSurface/60 border border-borderStone text-[11px] text-graphite font-light mb-6 space-y-0.5">
               <div><strong class="font-medium text-slateMuted">תכנון ועיצוב:</strong> רותי קולסקי</div>
               <div><strong class="font-medium text-slateMuted">שרטוט ותוכניות:</strong> נחמי בוקשפן</div>
             </div>
           </div>
 
           <div class="pt-4 border-t border-borderStone/80 space-y-2">
-            <a 
-              href="prot/פוגל-שינויי דיירים.pdf" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              class="w-full inline-flex items-center justify-center gap-2 py-2.5 bg-graphite hover:bg-bronze text-white text-xs font-semibold tracking-wide transition-colors"
-            >
+            <a href="prot/פוגל-שינויי דיירים.pdf" target="_blank" rel="noopener noreferrer"
+              class="w-full inline-flex items-center justify-center gap-2 py-2.5 bg-graphite hover:bg-bronze text-white text-xs font-semibold tracking-wide transition-colors">
               <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
               <span>צפייה בתוכנית (PDF)</span>
             </a>
-            
-            <a 
-              href="prot/פוגל-שינויי דיירים.pdf" 
-              download 
-              class="w-full inline-flex items-center justify-center gap-2 py-2 border border-borderStone hover:border-graphite text-graphite text-[11px] font-medium tracking-wide transition-colors"
-            >
+
+            <a href="prot/פוגל-שינויי דיירים.pdf" download
+              class="w-full inline-flex items-center justify-center gap-2 py-2 border border-borderStone hover:border-graphite text-graphite text-[11px] font-medium tracking-wide transition-colors">
               <i data-lucide="download" class="w-3.5 h-3.5 text-slateMuted"></i>
               <span>הורדת קובץ</span>
             </a>
@@ -911,25 +947,21 @@
   <!-- ========================================================= -->
   <section id="about" class="py-24 sm:py-32 bg-canvas border-b border-borderStone">
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
-      
+
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-        
+
         <!-- SIDE A: Architectural Composition Frame -->
         <div class="lg:col-span-5 relative">
           <div class="relative mx-auto max-w-md lg:max-w-none">
-            <div class="absolute -inset-3 border border-bronze/40 translate-x-2 -translate-y-2 pointer-events-none"></div>
-            
+            <div class="absolute -inset-3 border border-bronze/40 translate-x-2 -translate-y-2 pointer-events-none">
+            </div>
+
             <div class="relative bg-stoneSurface overflow-hidden border border-borderStone shadow-xl aspect-[4/5]">
-              <img 
-                src="1.jpeg" 
-                alt="נחמי בוקשפן - הנדסאית אדריכלות" 
-                class="w-full h-full object-cover filter contrast-[1.05] brightness-95"
-                loading="lazy"
-                decoding="async"
-                onerror="this.onerror=null; this.src='image_1.jpeg';"
-              />
+              <img src="1.jpeg" alt="נחמי בוקשפן - הנדסאית אדריכלות"
+                class="w-full h-full object-cover filter contrast-[1.05] brightness-95" loading="lazy" decoding="async"
+                onerror="this.onerror=null; this.src='image_1.jpeg';" />
               <div class="absolute inset-0 bg-gradient-to-t from-graphite/85 via-transparent to-transparent"></div>
-              
+
               <div class="absolute bottom-6 right-6 left-6 text-white">
                 <span class="text-xs font-mono text-bronze block mb-1">NECHAMI BOOKSHPAN</span>
                 <p class="font-display text-lg font-light">"מדויקת, אחראית ומחויבת ללוחות זמנים."</p>
@@ -944,14 +976,17 @@
             <i data-lucide="user-check" class="w-3.5 h-3.5"></i>
             <span>נעים להכיר</span>
           </div>
-          
+
           <h2 class="font-display font-medium text-3xl sm:text-4xl text-graphite tracking-tight mb-4">
             אני נחמי בוקשפן
-            <span class="block text-xl font-normal text-slateMuted mt-1">הנדסאית אדריכלות ועיצוב פנים • שירותי שרטוט פרילנס</span>
+            <span class="block text-xl font-normal text-slateMuted mt-1">הנדסאית אדריכלות ועיצוב פנים • שירותי שרטוט
+              פרילנס</span>
           </h2>
 
           <p class="text-slateMuted font-light leading-relaxed text-base mb-6">
-            מספקת שירותי שרטוט פרילנס ברמה הגבוהה ביותר עבור משרדי אדריכלות, מעצבי פנים, יזמים ולקוחות פרטיים. בעלת שליטה מלאה בתוכנות <strong>AutoCAD</strong> ו-<strong>SketchUp</strong>, עם דגש בלתי מתפשר על דיוק, קריאות הנדסית של התוכניות ועמידה קפדנית בלוחות הזמנים.
+            מספקת שירותי שרטוט פרילנס ברמה הגבוהה ביותר עבור משרדי אדריכלות, מעצבי פנים, יזמים ולקוחות פרטיים. בעלת
+            שליטה מלאה בתוכנות <strong>AutoCAD</strong> ו-<strong>SketchUp</strong>, עם דגש בלתי מתפשר על דיוק, קריאות
+            הנדסית של התוכניות ועמידה קפדנית בלוחות הזמנים.
           </p>
 
           <!-- Core Competencies Checklist -->
@@ -980,11 +1015,13 @@
 
           <!-- Quick Contact CTA -->
           <div class="mt-8 flex flex-wrap items-center gap-4">
-            <a href="tel:0584715725" class="inline-flex items-center gap-2 px-6 py-3 bg-graphite hover:bg-bronze text-white text-xs font-semibold tracking-wider transition-colors shadow-sm">
+            <a href="tel:0584715725"
+              class="inline-flex items-center gap-2 px-6 py-3 bg-graphite hover:bg-bronze text-white text-xs font-semibold tracking-wider transition-colors shadow-sm">
               <i data-lucide="phone" class="w-4 h-4"></i>
               <span>058-4715725</span>
             </a>
-            <a href="mailto:narc3152@gmail.com" class="inline-flex items-center gap-2 px-6 py-3 border border-borderStone hover:border-graphite text-graphite text-xs font-medium tracking-wider transition-colors">
+            <a href="mailto:narc3152@gmail.com"
+              class="inline-flex items-center gap-2 px-6 py-3 border border-borderStone hover:border-graphite text-graphite text-xs font-medium tracking-wider transition-colors">
               <i data-lucide="mail" class="w-4 h-4 text-bronze"></i>
               <span>narc3152@gmail.com</span>
             </a>
@@ -1003,28 +1040,31 @@
   <!-- ========================================================= -->
   <section id="contact" class="py-24 sm:py-32 bg-stoneSurface/70 border-b border-borderStone relative">
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
-      
+
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-        
+
         <!-- Contact Left -->
         <div class="lg:col-span-5 flex flex-col justify-between">
           <div>
-            <div class="inline-flex items-center gap-2 text-xs uppercase font-semibold tracking-widest text-bronze mb-3">
+            <div
+              class="inline-flex items-center gap-2 text-xs uppercase font-semibold tracking-widest text-bronze mb-3">
               <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
               <span>יצירת קשר ישיר</span>
             </div>
-            
+
             <h2 class="font-display font-medium text-3xl sm:text-4xl text-graphite tracking-tight mb-4">
               צריכים שרטוט מדויק לפרויקט הבא שלכם?
             </h2>
-            
+
             <p class="text-sm text-slateMuted font-light leading-relaxed mb-10">
               מוזמנים ליצור קשר ישיר לקבלת הצעת מחיר, תיאום שירותי שרטוט לפרויקט או ליווי תהליך שינויי דיירים.
             </p>
 
             <div class="space-y-6">
-              <a href="tel:0584715725" class="flex items-center gap-4 text-graphite hover:text-bronze transition-colors group">
-                <div class="w-12 h-12 bg-canvas border border-borderStone flex items-center justify-center text-bronze group-hover:bg-bronze group-hover:text-white transition-colors">
+              <a href="tel:0584715725"
+                class="flex items-center gap-4 text-graphite hover:text-bronze transition-colors group">
+                <div
+                  class="w-12 h-12 bg-canvas border border-borderStone flex items-center justify-center text-bronze group-hover:bg-bronze group-hover:text-white transition-colors">
                   <i data-lucide="phone" class="w-5 h-5"></i>
                 </div>
                 <div>
@@ -1033,8 +1073,10 @@
                 </div>
               </a>
 
-              <a href="mailto:narc3152@gmail.com" class="flex items-center gap-4 text-graphite hover:text-bronze transition-colors group">
-                <div class="w-12 h-12 bg-canvas border border-borderStone flex items-center justify-center text-bronze group-hover:bg-bronze group-hover:text-white transition-colors">
+              <a href="mailto:narc3152@gmail.com"
+                class="flex items-center gap-4 text-graphite hover:text-bronze transition-colors group">
+                <div
+                  class="w-12 h-12 bg-canvas border border-borderStone flex items-center justify-center text-bronze group-hover:bg-bronze group-hover:text-white transition-colors">
                   <i data-lucide="mail" class="w-5 h-5"></i>
                 </div>
                 <div>
@@ -1043,8 +1085,11 @@
                 </div>
               </a>
 
-              <a href="https://wa.me/972584715725?text=%D7%94%D7%99%D7%99%20%D7%A0%D7%97%D7%9E%D7%99%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99%20%D7%94%D7%A9%D7%A8%D7%98%D7%95%D7%98%20%D7%95%D7%94%D7%AA%D7%9B%D7%A0%D7%95%D7%98" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 text-graphite hover:text-bronze transition-colors group">
-                <div class="w-12 h-12 bg-canvas border border-borderStone flex items-center justify-center text-[#25D366] group-hover:bg-[#25D366] group-hover:text-white transition-colors">
+              <a href="https://wa.me/972584715725?text=%D7%94%D7%99%D7%99%20%D7%A0%D7%97%D7%9E%D7%99%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99%20%D7%94%D7%A9%D7%A8%D7%98%D7%95%D7%98%20%D7%95%D7%94%D7%AA%D7%9B%D7%A0%D7%95%D7%9F"
+                target="_blank" rel="noopener noreferrer"
+                class="flex items-center gap-4 text-graphite hover:text-bronze transition-colors group">
+                <div
+                  class="w-12 h-12 bg-canvas border border-borderStone flex items-center justify-center text-[#25D366] group-hover:bg-[#25D366] group-hover:text-white transition-colors">
                   <i data-lucide="message-circle" class="w-5 h-5"></i>
                 </div>
                 <div>
@@ -1066,53 +1111,36 @@
           <p class="text-xs text-slateMuted font-light mb-8">מלאו את פרטי הפרויקט ונחזור אליכם בהקדם.</p>
 
           <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
-            
+
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
                 <label for="name" class="block text-xs font-mono text-slateMuted uppercase mb-2">שם מלא *</label>
-                <input 
-                  type="text" 
-                  id="name" 
-                  name="name" 
-                  required
+                <input type="text" id="name" name="name" required
                   class="w-full px-4 py-3 bg-stoneSurface/40 border border-borderStone focus:border-bronze focus:bg-white text-graphite text-sm outline-none transition-all"
-                  placeholder="ישראל ישראלי"
-                />
+                  placeholder="ישראל ישראלי" />
               </div>
 
               <div>
                 <label for="phone" class="block text-xs font-mono text-slateMuted uppercase mb-2">טלפון *</label>
-                <input 
-                  type="tel" 
-                  id="phone" 
-                  name="phone" 
-                  required
+                <input type="tel" id="phone" name="phone" required
                   class="w-full px-4 py-3 bg-stoneSurface/40 border border-borderStone focus:border-bronze focus:bg-white text-graphite text-sm outline-none transition-all"
-                  placeholder="050-0000000"
-                />
+                  placeholder="050-0000000" />
               </div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
                 <label for="email" class="block text-xs font-mono text-slateMuted uppercase mb-2">אימייל</label>
-                <input 
-                  type="email" 
-                  id="email" 
-                  name="email" 
+                <input type="email" id="email" name="email"
                   class="w-full px-4 py-3 bg-stoneSurface/40 border border-borderStone focus:border-bronze focus:bg-white text-graphite text-sm outline-none transition-all"
-                  placeholder="name@example.com"
-                />
+                  placeholder="name@example.com" />
               </div>
 
               <div>
-                <label for="projectType" class="block text-xs font-mono text-slateMuted uppercase mb-2">סוג השירות המבוקש *</label>
-                <select 
-                  id="projectType" 
-                  name="projectType" 
-                  required
-                  class="w-full px-4 py-3 bg-stoneSurface/40 border border-borderStone focus:border-bronze focus:bg-white text-graphite text-sm outline-none transition-all"
-                >
+                <label for="projectType" class="block text-xs font-mono text-slateMuted uppercase mb-2">סוג השירות
+                  המבוקש *</label>
+                <select id="projectType" name="projectType" required
+                  class="w-full px-4 py-3 bg-stoneSurface/40 border border-borderStone focus:border-bronze focus:bg-white text-graphite text-sm outline-none transition-all">
                   <option value="" disabled selected>בחירת סוג שירות</option>
                   <option value="שרטוט ותכנון אדריכלי">שרטוט ותכנון אדריכלי</option>
                   <option value="הפקת סט תכניות מלא לעבודה">הפקת סט תכניות מלא לעבודה</option>
@@ -1123,26 +1151,22 @@
             </div>
 
             <div>
-              <label for="message" class="block text-xs font-mono text-slateMuted uppercase mb-2">פרטי הפרויקט ולוחות זמנים</label>
-              <textarea 
-                id="message" 
-                name="message" 
-                rows="4" 
+              <label for="message" class="block text-xs font-mono text-slateMuted uppercase mb-2">פרטי הפרויקט ולוחות
+                זמנים</label>
+              <textarea id="message" name="message" rows="4"
                 class="w-full px-4 py-3 bg-stoneSurface/40 border border-borderStone focus:border-bronze focus:bg-white text-graphite text-sm outline-none transition-all resize-none"
-                placeholder="ספרו בקצרה על הפרויקט, שלב התוכניות ולוחות הזמנים הנדרשים..."
-              ></textarea>
+                placeholder="ספרו בקצרה על הפרויקט, שלב התוכניות ולוחות הזמנים הנדרשים..."></textarea>
             </div>
 
-            <button 
-              type="submit" 
-              class="w-full py-4 bg-graphite hover:bg-bronze text-white text-xs font-semibold tracking-wider uppercase transition-all duration-300 shadow-md flex items-center justify-center gap-2"
-            >
+            <button type="submit"
+              class="w-full py-4 bg-graphite hover:bg-bronze text-white text-xs font-semibold tracking-wider uppercase transition-all duration-300 shadow-md flex items-center justify-center gap-2">
               <span>שליחת פנייה</span>
               <i data-lucide="send" class="w-3.5 h-3.5"></i>
             </button>
 
             <!-- Success message toast container -->
-            <div id="form-success" class="hidden p-4 bg-stoneSurface border border-bronze/40 text-graphite text-sm text-center">
+            <div id="form-success"
+              class="hidden p-4 bg-stoneSurface border border-bronze/40 text-graphite text-sm text-center">
               תודה רבה! פנייתכם התקבלה בהצלחה, ניצור עמכם קשר בהקדם.
             </div>
 
@@ -1160,7 +1184,7 @@
   <!-- ========================================================= -->
   <footer class="py-12 bg-graphite text-canvas border-t border-graphite">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-      
+
       <div class="flex flex-col items-center md:items-start">
         <span class="font-display font-medium text-lg text-white tracking-wide">נחמי בוקשפן</span>
         <span class="text-xs text-stone-400 font-light tracking-wider">הנדסאית אדריכלות • שירותי שרטוט פרילנס</span>
@@ -1185,16 +1209,14 @@
   <!-- ========================================================= -->
   <!-- SMART FLOATING WHATSAPP BUTTON (058-4715725)              -->
   <!-- ========================================================= -->
-  <a 
-    href="https://wa.me/972584715725?text=%D7%94%D7%99%D7%99%20%D7%A0%D7%97%D7%9E%D7%99%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%94%D7%AA%D7%99%D7%99%D7%A2%D7%A5%20%D7%9C%D7%92%D7%91%D7%99%20%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99%20%D7%A9%D7%A8%D7%98%D7%95%D7%98%20%D7%95%D7%AA%D7%9B%D7%A0%D7%95%D7%9F" 
-    target="_blank" 
-    rel="noopener noreferrer"
+  <a href="https://wa.me/972584715725?text=%D7%94%D7%99%D7%99%20%D7%A0%D7%97%D7%9E%D7%99%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%94%D7%AA%D7%99%D7%99%D7%A2%D7%A5%20%D7%9C%D7%92%D7%91%D7%99%20%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99%20%D7%A9%D7%A8%D7%98%D7%95%D7%98%20%D7%95%D7%AA%D7%9B%D7%A0%D7%95%D7%9F"
+    target="_blank" rel="noopener noreferrer"
     class="fixed bottom-6 left-6 z-40 flex items-center gap-3 bg-[#25D366] text-white pl-4 pr-5 py-3 rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 whatsapp-glow group focus:outline-none"
-    aria-label="שיחה בוואטסאפ עם נחמי בוקשפן"
-  >
+    aria-label="שיחה בוואטסאפ עם נחמי בוקשפן">
     <div class="w-6 h-6 flex items-center justify-center">
       <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.05 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.05 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
       </svg>
     </div>
     <span class="text-xs font-semibold tracking-wide hidden sm:inline">וואטסאפ: 058-4715725</span>
@@ -1204,24 +1226,19 @@
   <!-- ========================================================= -->
   <!-- FULLSCREEN LIGHTBOX / DETAIL INSPECTION MODAL             -->
   <!-- ========================================================= -->
-  <div id="lightbox-modal" class="fixed inset-0 z-50 hidden bg-graphite/95 backdrop-blur-md flex items-center justify-center p-4 sm:p-8" onclick="closeLightbox()">
-    
-    <button 
-      onclick="closeLightbox()" 
+  <div id="lightbox-modal"
+    class="fixed inset-0 z-50 hidden bg-graphite/95 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
+    onclick="closeLightbox()">
+
+    <button onclick="closeLightbox()"
       class="absolute top-6 left-6 p-2 text-white hover:text-bronze transition-colors focus:outline-none z-10"
-      aria-label="סגירת תצוגה מוגדלת"
-    >
+      aria-label="סגירת תצוגה מוגדלת">
       <i data-lucide="x" class="w-8 h-8"></i>
     </button>
 
     <div class="relative max-w-5xl max-h-[90vh] flex flex-col items-center" onclick="event.stopPropagation()">
       <div class="relative overflow-hidden bg-black/40 border border-white/20 p-2 shadow-2xl">
-        <img 
-          id="lightbox-img" 
-          src="" 
-          alt="תצוגה מוגדלת" 
-          class="max-w-full max-h-[75vh] object-contain"
-        />
+        <img id="lightbox-img" src="" alt="תצוגה מוגדלת" class="max-w-full max-h-[75vh] object-contain" />
       </div>
 
       <div class="mt-4 text-center text-white">
@@ -1291,10 +1308,10 @@
 
     function init3DFlipTouch() {
       const flipContainers = document.querySelectorAll('.flip-card-container');
-      
+
       flipContainers.forEach(container => {
         const inner = container.querySelector('.flip-card-inner');
-        
+
         container.addEventListener('click', (e) => {
           if (e.target.closest('button')) return;
           inner.classList.toggle('is-flipped');
@@ -1333,10 +1350,10 @@
       e.preventDefault();
       const form = document.getElementById('contact-form');
       const successMsg = document.getElementById('form-success');
-      
+
       successMsg.classList.remove('hidden');
       form.reset();
-      
+
       setTimeout(() => {
         successMsg.classList.add('hidden');
       }, 5000);
@@ -1344,4 +1361,5 @@
   </script>
 
 </body>
+
 </html>
